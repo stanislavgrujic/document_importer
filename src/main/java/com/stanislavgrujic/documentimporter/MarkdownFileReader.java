@@ -22,48 +22,31 @@ public class MarkdownFileReader {
 
     try (FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader)) {
-      Gson parser = new GsonBuilder().registerTypeAdapter(Semantics.class, new Semantics.SemanticsJsonDeserializer()).create();
+      Gson parser = new GsonBuilder().registerTypeAdapter(Semantics.class, new Semantics.SemanticsJsonDeserializer())
+                                     .create();
 
       String line = reader.readLine();
-      Attributes attributes;
       StringBuilder builder = new StringBuilder();
       Paragraph paragraph = null;
+      Paragraph parent = null;
+      int currentLevel = 0;
       while (line != null) {
-        if (line.startsWith("######")) {
+
+        if (isAttributesLine(line)) {
 
           if (paragraph != null) {
             paragraph.setValue(builder.toString());
-            builder.setLength(0);
             // todo save paragraph
             System.out.println(paragraph);
           }
 
           paragraph = new Paragraph();
 
-          if (line.endsWith("}")) {
-            line = line.substring(line.indexOf(" "));
-            builder.append(line);
-            attributes = parser.fromJson(builder.toString(), Attributes.class);
-            paragraph.setAttributes(attributes);
+          parseParagraphAttributes(line, paragraph, parser);
 
-            line = "";
-            builder.setLength(0);
-          } else {
-            builder.append(line);
-          }
-        } else {
-
-          if (builder.length() > 0) {
-            if (line.endsWith("}")) {
-              builder.append(line);
-
-              attributes = parser.fromJson(builder.toString(), Attributes.class);
-              paragraph.setAttributes(attributes);
-
-              line = "";
-              builder.setLength(0);
-            }
-          }
+          builder.setLength(0);
+          line = reader.readLine();
+          continue;
         }
 
         builder.append(line);
@@ -73,4 +56,15 @@ public class MarkdownFileReader {
     }
 
   }
+
+  private void parseParagraphAttributes(String line, Paragraph paragraph, Gson parser) {
+    String json = line.substring(line.indexOf(" "));
+    Attributes attributes = parser.fromJson(json, Attributes.class);
+    paragraph.setAttributes(attributes);
+  }
+
+  private boolean isAttributesLine(String line) {
+    return line.startsWith("######");
+  }
+
 }
