@@ -1,10 +1,13 @@
 package com.stanislavgrujic.documentimporter;
 
 import lombok.Data;
+import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@ToString(exclude = {"parent"})
 public class Paragraph {
 
   private Attributes attributes;
@@ -13,5 +16,9 @@ public class Paragraph {
 
   private Paragraph parent;
 
-  private List<Paragraph> children;
+  private List<Paragraph> children = new ArrayList<>();
+
+  public void addChild(Paragraph paragraph) {
+    children.add(paragraph);
+  }
 }

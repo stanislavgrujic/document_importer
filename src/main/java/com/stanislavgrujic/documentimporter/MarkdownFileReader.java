@@ -35,18 +35,50 @@ public class MarkdownFileReader {
         if (isAttributesLine(line)) {
 
           if (paragraph != null) {
-            paragraph.setValue(builder.toString());
-            // todo save paragraph
-            System.out.println(paragraph);
+            saveParagraph(paragraph, builder.toString());
+            builder.setLength(0);
           }
 
           paragraph = new Paragraph();
 
           parseParagraphAttributes(line, paragraph, parser);
 
-          builder.setLength(0);
           line = reader.readLine();
           continue;
+        }
+
+        if (isTitle(line)) {
+          int depth = line.indexOf(" ");
+
+          if (paragraph != null) {
+            saveParagraph(paragraph, builder.toString());
+            builder.setLength(0);
+          }
+
+          Paragraph newParagraph = new Paragraph();
+          if (depth > currentLevel) {
+            newParagraph.setParent(paragraph);
+
+            if (paragraph != null) {
+              paragraph.addChild(newParagraph);
+            }
+
+            paragraph = newParagraph;
+            currentLevel = depth;
+          } else if (depth == currentLevel) {
+            newParagraph.setParent(paragraph.getParent());
+            paragraph.getParent().addChild(newParagraph);
+          } else {
+
+            Paragraph ancestor = null;
+            while (depth < currentLevel) {
+              ancestor = paragraph.getParent();
+              currentLevel--;
+            }
+
+            ancestor.addChild(newParagraph);
+            newParagraph.setParent(ancestor);
+          }
         }
 
         builder.append(line);
@@ -57,6 +89,12 @@ public class MarkdownFileReader {
 
   }
 
+  private void saveParagraph(Paragraph paragraph, String value) {
+    paragraph.setValue(value);
+    // todo save paragraph
+    System.out.println(paragraph);
+  }
+
   private void parseParagraphAttributes(String line, Paragraph paragraph, Gson parser) {
     String json = line.substring(line.indexOf(" "));
     Attributes attributes = parser.fromJson(json, Attributes.class);
@@ -65,6 +103,10 @@ public class MarkdownFileReader {
 
   private boolean isAttributesLine(String line) {
     return line.startsWith("######");
+  }
+
+  private boolean isTitle(String line) {
+    return line.startsWith("#") && line.indexOf(" ") < 5;
   }
 
 }
