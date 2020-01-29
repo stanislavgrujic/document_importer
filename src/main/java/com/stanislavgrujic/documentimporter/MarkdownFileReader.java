@@ -3,6 +3,7 @@ package com.stanislavgrujic.documentimporter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.SneakyThrows;
+import lombok.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -22,83 +23,38 @@ public class MarkdownFileReader {
 
     try (FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader)) {
-      Gson parser = new GsonBuilder().registerTypeAdapter(Semantics.class, new Semantics.SemanticsJsonDeserializer())
-                                     .create();
-
       String line = reader.readLine();
-      StringBuilder builder = new StringBuilder();
-      Paragraph paragraph = null;
-      Paragraph parent = null;
-      int currentLevel = 0;
+
+      MarkdownParser mdParser = MarkdownParser.INIT;
+
       while (line != null) {
 
+        Event event;
         if (isAttributesLine(line)) {
 
-          if (paragraph != null) {
-            saveParagraph(paragraph, builder.toString());
-            builder.setLength(0);
-          }
+          event = new Event(EventType.ATTRIBUTES_READ, line);
 
-          paragraph = new Paragraph();
+        } else if (isTitle(line)) {
 
-          parseParagraphAttributes(line, paragraph, parser);
+          event = new Event(EventType.TITLE_READ, line);
 
-          line = reader.readLine();
-          continue;
+        } else {
+          event = new Event(EventType.TEXT_READ, line);
         }
 
-        if (isTitle(line)) {
-          int depth = line.indexOf(" ");
-
-          if (paragraph != null) {
-            saveParagraph(paragraph, builder.toString());
-            builder.setLength(0);
-          }
-
-          Paragraph newParagraph = new Paragraph();
-          if (depth > currentLevel) {
-            newParagraph.setParent(paragraph);
-
-            if (paragraph != null) {
-              paragraph.addChild(newParagraph);
-            }
-
-            paragraph = newParagraph;
-            currentLevel = depth;
-          } else if (depth == currentLevel) {
-            newParagraph.setParent(paragraph.getParent());
-            paragraph.getParent().addChild(newParagraph);
-          } else {
-
-            Paragraph ancestor = null;
-            while (depth < currentLevel) {
-              ancestor = paragraph.getParent();
-              currentLevel--;
-            }
-
-            ancestor.addChild(newParagraph);
-            newParagraph.setParent(ancestor);
-          }
-        }
-
-        builder.append(line);
+        mdParser = (MarkdownParser) mdParser.handle(event);
 
         line = reader.readLine();
       }
+
+      mdParser.saveParagraph();
     }
 
   }
 
-  private void saveParagraph(Paragraph paragraph, String value) {
-    paragraph.setValue(value);
-    // todo save paragraph
-    System.out.println(paragraph);
-  }
-
-  private void parseParagraphAttributes(String line, Paragraph paragraph, Gson parser) {
+  private static Attributes parseParagraphAttributes(String line, Gson parser) {
     String json = line.substring(line.indexOf(" "));
-    Attributes attributes = parser.fromJson(json, Attributes.class);
-    paragraph.setAttributes(attributes);
+    return parser.fromJson(json, Attributes.class);
   }
 
   private boolean isAttributesLine(String line) {
@@ -106,7 +62,142 @@ public class MarkdownFileReader {
   }
 
   private boolean isTitle(String line) {
-    return line.startsWith("#") && line.indexOf(" ") < 5;
+    return line.startsWith("#") && line.indexOf(" ") < 6;
+  }
+
+  private enum MarkdownParser implements State {
+    INIT {
+      @Override
+      public State handle(Event event) {
+        switch (event.getType()) {
+          case ATTRIBUTES_READ:
+            attributes = parseParagraphAttributes(event.getLine(), parser);
+            return ATTRIBUTES_READ;
+          case TITLE_READ:
+            String line = event.getLine();
+            depth = line.indexOf(" ");
+            title = line.substring(depth + 1);
+            return TITLE_READ;
+          case TEXT_READ:
+            builder.append(event.getLine());
+            return TEXT_READ;
+          default:
+            throw new IllegalArgumentException("Unknown event type");
+        }
+      }
+    },
+
+    ATTRIBUTES_READ {
+      @Override
+      public State handle(Event event) {
+        switch (event.getType()) {
+          case ATTRIBUTES_READ:
+            attributes = parseParagraphAttributes(event.getLine(), parser);
+            return ATTRIBUTES_READ;
+          case TITLE_READ:
+            String line = event.getLine();
+            depth = line.indexOf(" ");
+            title = line.substring(depth + 1);
+            return TITLE_READ;
+          case TEXT_READ:
+            builder.append(event.getLine());
+            return TEXT_READ;
+          default:
+            throw new IllegalArgumentException("Unknown event type");
+        }
+      }
+    },
+    TITLE_READ {
+      @Override
+      public State handle(Event event) {
+        switch (event.getType()) {
+          case ATTRIBUTES_READ:
+            saveParagraph();
+            attributes = parseParagraphAttributes(event.getLine(), parser);
+            return ATTRIBUTES_READ;
+          case TITLE_READ:
+            saveParagraph();
+            String line = event.getLine();
+            depth = line.indexOf(" ");
+            title = line.substring(depth + 1);
+            return TITLE_READ;
+          case TEXT_READ:
+            builder.append(event.getLine());
+            return TEXT_READ;
+          default:
+            throw new IllegalArgumentException("Unknown event type");
+        }
+      }
+    },
+
+    TEXT_READ {
+      @Override
+      public State handle(Event event) {
+        switch (event.getType()) {
+          case ATTRIBUTES_READ:
+            saveParagraph();
+            attributes = parseParagraphAttributes(event.getLine(), parser);
+            return ATTRIBUTES_READ;
+          case TITLE_READ:
+            saveParagraph();
+            String line = event.getLine();
+            depth = line.indexOf(" ");
+            title = line.substring(depth + 1);
+            return TITLE_READ;
+          case TEXT_READ:
+            builder.append(event.getLine());
+            return TEXT_READ;
+          default:
+            throw new IllegalArgumentException("Unknown event type");
+        }
+      }
+    };
+
+    private static Gson parser = new GsonBuilder().registerTypeAdapter(Semantics.class,
+        new Semantics.SemanticsJsonDeserializer())
+                                                  .create();
+
+    private static int depth = 0;
+    private static Attributes attributes;
+    private static String title;
+    private static StringBuilder builder = new StringBuilder();
+
+    public void saveParagraph() {
+      Paragraph paragraph = new Paragraph();
+      paragraph.setAttributes(attributes);
+      paragraph.setTitle(title);
+      paragraph.setValue(builder.toString());
+
+      saveParagraph(paragraph);
+
+      attributes = null;
+      title = null;
+      builder.setLength(0);
+    }
+
+    private static void saveParagraph(Paragraph paragraph) {
+      if (paragraph == null) {
+        return;
+      }
+      // todo save paragraph
+      System.out.println(paragraph);
+    }
+  }
+
+  private interface State {
+    State handle(Event event);
+  }
+
+  @Value
+  private class Event {
+    private EventType type;
+    private String line;
+  }
+
+  private enum EventType {
+    ATTRIBUTES_READ,
+    TITLE_READ,
+    TEXT_READ
   }
 
 }

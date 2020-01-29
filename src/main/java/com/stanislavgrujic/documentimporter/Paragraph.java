@@ -12,6 +12,8 @@ public class Paragraph {
 
   private Attributes attributes;
 
+  private String title;
+
   private String value;
 
   private Paragraph parent;
