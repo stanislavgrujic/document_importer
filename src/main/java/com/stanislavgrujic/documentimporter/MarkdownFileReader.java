@@ -29,27 +29,28 @@ public class MarkdownFileReader {
 
       while (line != null) {
 
-        Event event;
-        if (isAttributesLine(line)) {
-
-          event = new Event(EventType.ATTRIBUTES_READ, line);
-
-        } else if (isTitle(line)) {
-
-          event = new Event(EventType.TITLE_READ, line);
-
-        } else {
-          event = new Event(EventType.TEXT_READ, line);
-        }
-
+        Event event = createEvent(line);
         mdParser = (MarkdownParser) mdParser.handle(event);
 
         line = reader.readLine();
       }
 
       mdParser.saveParagraph();
+      mdParser.printStructure();
     }
 
+  }
+
+  private Event createEvent(String line) {
+    if (isAttributesLine(line)) {
+      return new Event(EventType.ATTRIBUTES_READ, line);
+
+    } else if (isTitle(line)) {
+      return new Event(EventType.TITLE_READ, line);
+
+    } else {
+      return new Event(EventType.TEXT_READ, line);
+    }
   }
 
   private static Attributes parseParagraphAttributes(String line, Gson parser) {
@@ -71,16 +72,11 @@ public class MarkdownFileReader {
       public State handle(Event event) {
         switch (event.getType()) {
           case ATTRIBUTES_READ:
-            attributes = parseParagraphAttributes(event.getLine(), parser);
-            return ATTRIBUTES_READ;
+            return handleAttributesRead(event);
           case TITLE_READ:
-            String line = event.getLine();
-            depth = line.indexOf(" ");
-            title = line.substring(depth + 1);
-            return TITLE_READ;
+            return handleTitleRead(event);
           case TEXT_READ:
-            builder.append(event.getLine());
-            return TEXT_READ;
+            return handleTextRead(event);
           default:
             throw new IllegalArgumentException("Unknown event type");
         }
@@ -92,20 +88,16 @@ public class MarkdownFileReader {
       public State handle(Event event) {
         switch (event.getType()) {
           case ATTRIBUTES_READ:
-            attributes = parseParagraphAttributes(event.getLine(), parser);
-            return ATTRIBUTES_READ;
+            return handleAttributesRead(event);
           case TITLE_READ:
-            String line = event.getLine();
-            depth = line.indexOf(" ");
-            title = line.substring(depth + 1);
-            return TITLE_READ;
+            return handleTitleRead(event);
           case TEXT_READ:
-            builder.append(event.getLine());
-            return TEXT_READ;
+            return handleTextRead(event);
           default:
             throw new IllegalArgumentException("Unknown event type");
         }
       }
+
     },
     TITLE_READ {
       @Override
@@ -113,17 +105,12 @@ public class MarkdownFileReader {
         switch (event.getType()) {
           case ATTRIBUTES_READ:
             saveParagraph();
-            attributes = parseParagraphAttributes(event.getLine(), parser);
-            return ATTRIBUTES_READ;
+            return handleAttributesRead(event);
           case TITLE_READ:
             saveParagraph();
-            String line = event.getLine();
-            depth = line.indexOf(" ");
-            title = line.substring(depth + 1);
-            return TITLE_READ;
+            return handleTitleRead(event);
           case TEXT_READ:
-            builder.append(event.getLine());
-            return TEXT_READ;
+            return handleTextRead(event);
           default:
             throw new IllegalArgumentException("Unknown event type");
         }
@@ -136,17 +123,12 @@ public class MarkdownFileReader {
         switch (event.getType()) {
           case ATTRIBUTES_READ:
             saveParagraph();
-            attributes = parseParagraphAttributes(event.getLine(), parser);
-            return ATTRIBUTES_READ;
+            return handleAttributesRead(event);
           case TITLE_READ:
             saveParagraph();
-            String line = event.getLine();
-            depth = line.indexOf(" ");
-            title = line.substring(depth + 1);
-            return TITLE_READ;
+            return handleTitleRead(event);
           case TEXT_READ:
-            builder.append(event.getLine());
-            return TEXT_READ;
+            return handleTextRead(event);
           default:
             throw new IllegalArgumentException("Unknown event type");
         }
@@ -157,7 +139,9 @@ public class MarkdownFileReader {
         new Semantics.SemanticsJsonDeserializer())
                                                   .create();
 
+    private static Paragraph parent = null;
     private static int depth = 0;
+    private static int currentLevel = 0;
     private static Attributes attributes;
     private static String title;
     private static StringBuilder builder = new StringBuilder();
@@ -168,6 +152,24 @@ public class MarkdownFileReader {
       paragraph.setTitle(title);
       paragraph.setValue(builder.toString());
 
+      if (parent == null) {
+        parent = paragraph;
+        currentLevel = depth;
+      } else {
+        if (title != null) {
+          determineCurrentParagraphPlacing();
+
+          parent.addChild(paragraph);
+          paragraph.setParent(parent);
+          parent = paragraph;
+          currentLevel++;
+          //          saveParagraph(parent);
+        } else {
+          parent.addChild(paragraph);
+          paragraph.setParent(parent);
+        }
+      }
+
       saveParagraph(paragraph);
 
       attributes = null;
@@ -175,11 +177,59 @@ public class MarkdownFileReader {
       builder.setLength(0);
     }
 
-    private static void saveParagraph(Paragraph paragraph) {
-      if (paragraph == null) {
-        return;
+    private void determineCurrentParagraphPlacing() {
+      if (currentLevel > depth) {
+        while (currentLevel >= depth) {
+          parent = parent.getParent();
+          currentLevel--;
+        }
+
+      } else {
+        while (depth - currentLevel > 1) {
+          parent = getLastChildOfCurrentParent();
+          currentLevel++;
+        }
       }
-      // todo save paragraph
+    }
+
+    private void printStructure() {
+      Paragraph topParent = parent;
+      while (topParent.getParent() != null) {
+        topParent = topParent.getParent();
+      }
+
+      printParagraph(topParent, "");
+    }
+
+    private static void printParagraph(Paragraph paragraph, String indent) {
+      String text = paragraph.getTitle() == null ? paragraph.getValue() : paragraph.getTitle();
+      System.out.println(indent + text);
+      paragraph.getChildren().forEach(p -> printParagraph(p, (indent + "-")));
+    }
+
+    private Paragraph getLastChildOfCurrentParent() {
+      return parent.getChildren().get(parent.getChildren().size() - 1);
+    }
+
+    private static State handleAttributesRead(Event event) {
+      attributes = parseParagraphAttributes(event.getLine(), parser);
+      return ATTRIBUTES_READ;
+    }
+
+    private static State handleTitleRead(Event event) {
+      String line = event.getLine();
+      depth = line.indexOf(" ");
+      title = line.substring(depth + 1);
+      return TITLE_READ;
+    }
+
+    private static State handleTextRead(Event event) {
+      builder.append(event.getLine());
+      return TEXT_READ;
+    }
+
+    private static void saveParagraph(Paragraph paragraph) {
+      // save paragraph
       System.out.println(paragraph);
     }
   }
@@ -189,7 +239,7 @@ public class MarkdownFileReader {
   }
 
   @Value
-  private class Event {
+  private static class Event {
     private EventType type;
     private String line;
   }
