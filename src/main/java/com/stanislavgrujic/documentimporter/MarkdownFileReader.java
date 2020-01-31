@@ -11,6 +11,9 @@ import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class MarkdownFileReader {
@@ -18,7 +21,7 @@ public class MarkdownFileReader {
   @SneakyThrows
   @PostConstruct
   public void read() {
-    ClassPathResource classPathResource = new ClassPathResource("Knowledge Blocks - test.md");
+    ClassPathResource classPathResource = new ClassPathResource("Architectural styles.md");
     File file = classPathResource.getFile();
 
     try (FileReader fileReader = new FileReader(file);
@@ -145,6 +148,9 @@ public class MarkdownFileReader {
     private static Attributes attributes;
     private static String title;
     private static StringBuilder builder = new StringBuilder();
+    private static boolean firstChild = false;
+
+    private static Map<Integer, List<Paragraph>> paragraphs = new HashMap<>();
 
     public void saveParagraph() {
       Paragraph paragraph = new Paragraph();
@@ -163,8 +169,12 @@ public class MarkdownFileReader {
           paragraph.setParent(parent);
           parent = paragraph;
           currentLevel++;
-          //          saveParagraph(parent);
+          firstChild = true;
         } else {
+          if (firstChild) {
+            currentLevel++;
+            firstChild = false;
+          }
           parent.addChild(paragraph);
           paragraph.setParent(parent);
         }
@@ -179,7 +189,7 @@ public class MarkdownFileReader {
 
     private void determineCurrentParagraphPlacing() {
       if (currentLevel > depth) {
-        while (currentLevel >= depth) {
+        while (currentLevel > depth) {
           parent = parent.getParent();
           currentLevel--;
         }
