@@ -17,4 +17,8 @@ public class Attributes {
    @SerializedName("part-of")
    private String partOf;
 
+   private String sourceLink;
+
+
+
 }

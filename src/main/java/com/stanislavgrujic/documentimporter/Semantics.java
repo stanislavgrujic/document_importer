@@ -13,18 +13,24 @@ public enum Semantics {
   DEFINITION("def"),
   EXPLANATION("expl"),
   EXAMPLE("exampl"),
-  METAPHOR("meth"),
+  METAPHOR("metaphor"),
   COMPOSED_OF("comp-of"),
   TYPES("types"),
   USE_CASES("use-case"),
-  WARNING("war"),
+  WARNING("warning"),
   METRICS("num"),
   IMPORTANT("rem"),
   SIMILAR_TO("simil"),
   DIFFERENT_FROM("diff"),
   BEST_PRACTICE("pattern"),
   ANTI_PATTERN("untipat"),
-  CORRELATION("corr");
+  CORRELATION("corr"),
+  COMPARISON("comp"),
+  HINT("hint"),
+  TOOL("tool"),
+  PROS("pros"),
+  CONS("cons"),
+  ;
 
   private String value;
 
