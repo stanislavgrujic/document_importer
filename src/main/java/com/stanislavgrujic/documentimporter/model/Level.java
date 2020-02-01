@@ -1,4 +1,4 @@
-package com.stanislavgrujic.documentimporter;
+package com.stanislavgrujic.documentimporter.model;
 
 public enum Level {
 

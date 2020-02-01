@@ -1,4 +1,4 @@
-package com.stanislavgrujic.documentimporter;
+package com.stanislavgrujic.documentimporter.model;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
