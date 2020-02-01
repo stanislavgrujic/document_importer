@@ -25,3 +25,4 @@ hs_err_pid*
 # IDEA project files
 .idea/*
 /document_importer.iml
+/target/*
