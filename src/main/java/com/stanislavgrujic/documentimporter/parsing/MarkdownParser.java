@@ -5,10 +5,12 @@ import com.google.gson.GsonBuilder;
 import com.stanislavgrujic.documentimporter.model.Attributes;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.model.Semantics;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 enum MarkdownParser implements State {
   INIT {
     @Override
@@ -105,8 +107,6 @@ enum MarkdownParser implements State {
       paragraph.setParent(parent);
     }
 
-    saveParagraph(paragraph);
-
     attributes = null;
     title = null;
     builder.setLength(0);
@@ -120,19 +120,13 @@ enum MarkdownParser implements State {
     paragraph.setParent(parent);
   }
 
-  public void printStructure() {
+  public Paragraph getTopParent() {
     Paragraph topParent = parent;
     while (topParent.getParent() != null) {
       topParent = topParent.getParent();
     }
 
-    printParagraph(topParent, "");
-  }
-
-  private static void printParagraph(Paragraph paragraph, String indent) {
-    String text = paragraph.getTitle() == null ? paragraph.getValue() : paragraph.getTitle();
-    System.out.println(indent + text);
-    paragraph.getChildren().forEach(p -> printParagraph(p, (indent + "-")));
+    return topParent;
   }
 
   private static State handleAttributesRead(Event event) {
@@ -157,8 +151,4 @@ enum MarkdownParser implements State {
     return TEXT_READ;
   }
 
-  private static void saveParagraph(Paragraph paragraph) {
-    // save paragraph
-    System.out.println(paragraph);
-  }
 }

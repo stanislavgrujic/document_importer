@@ -1,6 +1,9 @@
 package com.stanislavgrujic.documentimporter.parsing;
 
+import com.stanislavgrujic.documentimporter.model.Paragraph;
+import com.stanislavgrujic.documentimporter.repository.ParagraphRepository;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +15,13 @@ import java.io.FileReader;
 @Component
 public class MarkdownFileReader {
 
+  @Autowired
+  private ParagraphRepository repository;
+
   @SneakyThrows
   @PostConstruct
   public void read() {
-    ClassPathResource classPathResource = new ClassPathResource("Knowledge blocks - test.md");
+    ClassPathResource classPathResource = new ClassPathResource("Architectural styles.md");
     File file = classPathResource.getFile();
 
     try (FileReader fileReader = new FileReader(file);
@@ -33,7 +39,8 @@ public class MarkdownFileReader {
       }
 
       mdParser.saveParagraph();
-      mdParser.printStructure();
+      Paragraph topParagraph = mdParser.getTopParent();
+      repository.save(topParagraph);
     }
 
   }
