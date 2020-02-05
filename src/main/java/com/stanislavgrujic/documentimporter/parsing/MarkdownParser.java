@@ -80,9 +80,9 @@ enum MarkdownParser implements State {
     }
   };
 
-  private static Gson parser = new GsonBuilder().registerTypeAdapter(Semantics.class,
-      new Semantics.SemanticsJsonDeserializer())
-                                                .create();
+  private static Gson parser = new GsonBuilder()
+      .registerTypeAdapter(Semantics.class, new Semantics.SemanticsJsonDeserializer())
+      .create();
 
   private static Paragraph parent = null;
   private static int depth = 0;
