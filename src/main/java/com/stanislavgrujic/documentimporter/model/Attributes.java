@@ -4,17 +4,22 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Data
 @Embeddable
 public class Attributes {
 
   @SerializedName("sem")
+  @Enumerated(EnumType.STRING)
   private Semantics semantics;
 
   @SerializedName("lev")
-  private Level level;
+  @Enumerated(EnumType.STRING)
+  private Level level = Level.ENTRY;
 
+  @Enumerated(EnumType.STRING)
   private Clarity clarity;
 
   @SerializedName("part-of")
