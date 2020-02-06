@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.stanislavgrujic.documentimporter.model.Attributes;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.model.Semantics;
+import org.apache.commons.text.TextStringBuilder;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -88,7 +89,7 @@ enum MarkdownParser implements State {
   private static int depth = 0;
   private static Attributes attributes;
   private static String title;
-  private static StringBuilder builder = new StringBuilder();
+  private static TextStringBuilder builder = new TextStringBuilder();
 
   private static Map<Integer, Paragraph> paragraphs = new HashMap<>();
 
@@ -147,7 +148,7 @@ enum MarkdownParser implements State {
   }
 
   private static State handleTextRead(Event event) {
-    builder.append(event.getLine());
+    builder.appendln(event.getLine());
     return TEXT_READ;
   }
 
