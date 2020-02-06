@@ -22,6 +22,9 @@ public class MarkdownFileReader {
   public void read() {
     ClassPathResource classPathResource = new ClassPathResource("markdown/Architectural_styles.md");
 
+    Paragraph systemDesign = new Paragraph();
+    systemDesign.setTitle("System Design");
+
     try (InputStreamReader fileReader = new InputStreamReader(classPathResource.getInputStream());
         BufferedReader reader = new BufferedReader(fileReader)) {
       String line = reader.readLine();
@@ -38,8 +41,13 @@ public class MarkdownFileReader {
 
       mdParser.saveParagraph();
       Paragraph topParagraph = mdParser.getTopParent();
-      repository.save(topParagraph);
+
+      systemDesign.addChildren(topParagraph.getChildren());
+      for (Paragraph child : topParagraph.getChildren()) {
+        child.setParent(systemDesign);
+      }
     }
+    repository.save(systemDesign);
 
   }
 

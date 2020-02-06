@@ -40,4 +40,8 @@ public class Paragraph {
   public void addChild(Paragraph paragraph) {
     children.add(paragraph);
   }
+
+  public void addChildren(List<Paragraph> paragraphs) {
+    children.addAll(paragraphs);
+  }
 }
