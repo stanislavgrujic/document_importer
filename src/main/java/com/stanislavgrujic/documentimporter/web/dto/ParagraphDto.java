@@ -3,6 +3,7 @@ package com.stanislavgrujic.documentimporter.web.dto;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import lombok.Builder;
 import lombok.Value;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,10 +25,16 @@ public class ParagraphDto {
     ParagraphDtoBuilder builder = new ParagraphDtoBuilder();
     return builder
         .id(paragraph.getId())
-        .text(paragraph.getValue())
+        .text(createText(paragraph))
         .attributes(AttributesDto.from(paragraph.getAttributes()))
         .path(createPath(paragraph))
         .build();
+  }
+
+  private static String createText(Paragraph paragraph) {
+    String title = StringUtils.isNotEmpty(paragraph.getTitle()) ? paragraph.getTitle() + System.lineSeparator() : "";
+    String text = StringUtils.isNotEmpty(paragraph.getValue()) ? paragraph.getValue() : "";
+    return  title + text;
   }
 
   private static List<PathDto> createPath(Paragraph paragraph) {
