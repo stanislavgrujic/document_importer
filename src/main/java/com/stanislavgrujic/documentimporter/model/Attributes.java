@@ -11,19 +11,16 @@ import javax.persistence.Enumerated;
 @Embeddable
 public class Attributes {
 
-  @SerializedName("sem")
+  @SerializedName("semantic")
   @Enumerated(EnumType.STRING)
   private Semantics semantics;
 
-  @SerializedName("lev")
+  @SerializedName("mastery")
   @Enumerated(EnumType.STRING)
   private Level level = Level.ENTRY;
 
   @Enumerated(EnumType.STRING)
   private Clarity clarity;
-
-  @SerializedName("part-of")
-  private String partOf;
 
   @SerializedName("source-link")
   private String sourceLink;
@@ -36,6 +33,9 @@ public class Attributes {
 
   @SerializedName("time-period")
   private String timePeriod;
+
+  @SerializedName("inspired-by")
+  private String inspiredBy;
 
   @SerializedName("tags")
   private String tags;
