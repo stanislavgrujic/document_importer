@@ -1,4 +1,4 @@
-# Architectural styles {#architectural-styles}
+# Architectural styles 
 
 ###### {"semantic":"why"}
 
@@ -33,10 +33,10 @@ Processing styles:
 
 
 
-## Processing Styles {#processing-styles}
+## Processing Styles 
 
 
-### OLTP / service / online system {#oltp-service-online-system}
+### OLTP / service / online system 
 
 ###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
 
@@ -158,7 +158,7 @@ Scalability describes the way a system is designed to meet changing demand - und
 As an example, software that’s scalable can be easily picked up and dropped onto a new server -– possibly within a new network environment -– and just run without any manual configuration. Similarly, the composition of a scalable infrastructure can be quickly changed in a way that all the old bits and pieces immediately know how to work together with the new ones.
 
 
-### Batch processing system / offline systems {#batch-processing-system-offline-systems}
+### Batch processing system / offline systems 
 
 ###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch)", "source-author":"Martin Kleppmann", "source-details":"Read entire section >Batch processing<"}
 
@@ -167,7 +167,7 @@ A batch processing system takes a large amount of input data, runs a job to proc
 it, and produces some output data. Jobs often take a while (from a few minutes to several days), so there normally isn’t a user waiting for the job to finish. Instead, batch jobs are often scheduled to run periodically (for example, once a day). The primary performance measure of a batch job is usually throughput (the time it takes to crunch through an input dataset of a certain size). We discuss batch processing in this chapter.
 
 
-### Messaging systems {#messaging-systems}
+### Messaging systems 
 
 ###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=ITrlLErsqzY](https://www.youtube.com/watch?v=ITrlLErsqzY)", "Time-period":"00:05:15 - 00:06:19", "source-author":"Clemens Vasters", "mastery":"medium"}
 
@@ -230,7 +230,7 @@ The big advantage of log-based integration is loose coupling between the various
 2. At a human level, unbundling data systems allows different software components and services to be developed, improved, and maintained independently from each other by different teams. Specialization allows each team to focus on doing one thing well, with well-defined interfaces to other teams’ systems. Event logs provide an interface that is powerful enough to capture fairly strong consistency properties (due to durability and ordering of events), but also general enough to be applicable to almost any kind of data.
 
 
-#### Stream processing system / near-real-time systems  {#stream-processing-system-near-real-time-systems}
+#### Stream processing system / near-real-time systems  
 
 ###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
 
@@ -376,17 +376,17 @@ A sliding window contains all the events that occur within some interval of each
 Unlike the other window types, a session window has no fixed duration. Instead, it is defined by grouping together all events for the same user that occur closely together in time, and the window ends when the user has been inactive for some time.
 
 
-#### Event driven architecture {#event-driven-architecture}
+#### Event driven architecture 
 
 ###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
 
 Event driven architecture intro and event/message types
 
 
-##### Domain events {#domain-events}
+##### Domain events 
 
 
-##### Event sourcing {#event-sourcing}
+##### Event sourcing 
 
 ###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
 
@@ -433,7 +433,7 @@ Truly deleting data is surprisingly hard, since copies can live in many places: 
 Event sourcing intro
 
 
-##### CQRS {#cqrs}
+##### CQRS 
 
 ###### {"semantic":"why", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
 
@@ -450,13 +450,13 @@ data in the read-optimized views, as the translation process gives you a mechani
 for keeping it consistent with the event log.
 
 
-##### Message broker and message queue (Messaging: Request-Reply, Point-to-Point, Publish-Subscribe, Fire-and-forget) {#message-broker-and-message-queue-messaging-request-reply-point-to-point-publish-subscribe-fire-and-forget}
+##### Message broker and message queue (Messaging: Request-Reply, Point-to-Point, Publish-Subscribe, Fire-and-forget) 
 
 
-##### Enterprise service bus {#enterprise-service-bus}
+##### Enterprise service bus 
 
 
-##### Actor model {#actor-model}
+##### Actor model 
 
 ###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
 
@@ -473,7 +473,7 @@ Although actor based systems are also based on messages and events, we normally 
 It is also possible to process streams using actor frameworks. However, many such frameworks do not guarantee message delivery in the case of crashes, so the processing is not fault-tolerant unless you implement additional retry logic.
 
 
-### Useful numbers {#useful-numbers}
+### Useful numbers 
 
 ###### {"semantic":"metrics"}
 
@@ -558,13 +558,13 @@ Big data defined by three V:
 *   Variety - when there is **all kinds **of multimedia storage that is semi-structured and which structure **will be discovered in later phase** of its usage
 
 
-## Structural styles {#structural-styles}
+## Structural styles 
 
 
-### Monolith {#monolith}
+### Monolith 
 
 
-### Microservices {#microservices}
+### Microservices 
 
 ###### {"semantic":"why"}
 
@@ -649,7 +649,7 @@ Service - scalability perspective
 Layers, Tiers and Services
 
 
-#### Distributed transactions {#distributed-transactions}
+#### Distributed transactions 
 
 ###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=AUrKofVRHV4](https://www.youtube.com/watch?v=AUrKofVRHV4)", "Time-period":"00:00:57 - 00:12:45", "source-author":"Jimmy Bogard"}
 
@@ -676,7 +676,7 @@ Distributed transactions proved in practice as hard to achieve because lot of di
 If your application can tolerate occasionally corrupting or losing data in unpredictable ways, life is a lot simpler, and you might be able to get away with simply crossing your fingers and hoping for the best. On the other hand, if you need stronger assurances of correctness, then db transaction is an established approach, but it comes at a cost: it typically only work in a single datacenter (ruling out geographically distributed architectures), and they limit the scale and fault-tolerance properties you can achieve.
 
 
-#### Business Flow Coordination {#business-flow-coordination}
+#### Business Flow Coordination 
 
 Business flow can be implemented by using:
 
@@ -702,7 +702,7 @@ Workflow engines - Comunda example
 Idempotency
 
 
-#### Service coupling  {#service-coupling}
+#### Service coupling  
 
 ###### {"semantic":"explanation", "source-link":"[https://www.infoq.com/presentations/netflix-play-api/](https://www.infoq.com/presentations/netflix-play-api/)", "Time-period":"00:11:10 - 00:15:15", "source-author":"Suudhan Rangarajan"}
 
@@ -721,7 +721,7 @@ Why shared data stores are bad
 Emissaries and SDKs
 
 
-#### Misbehaviour handling {#misbehaviour-handling}
+#### Misbehaviour handling 
 
 ###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:03:55 - 00:10:25", "source-author":"Bernd Rucker", "mastery":"medium"}
 
@@ -736,17 +736,17 @@ Misbehaviour handling - real use case
 Scenario of failures between services
 
 
-#### Service Scope {#service-scope}
+#### Service Scope 
 
 ###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:32:23 - 00:33:45", "source-author":"Allard Buijze", "tags":"bounded context"}
 
 Bounded Context Example
 
 
-### Modular monolith {#modular-monolith}
+### Modular monolith 
 
 
-## IoT {#iot}
+## IoT 
 
 ###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=Esg1BYJdZe0](https://www.youtube.com/watch?v=Esg1BYJdZe0)", "Time-period":"00:01:35 - 00:03:02", "source-author":"Clemens Vasters"}
 
