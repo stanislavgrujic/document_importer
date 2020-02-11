@@ -47,11 +47,7 @@ A service waits for a request or instruction from a client to arrive. When one i
 Web server popularity
 
 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Architectural-styles1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Architectural-styles1.png "image_tooltip")
+![alt_text](../images/Architectural-styles1.png "image_tooltip")
 
 
 ###### {"semantic":"tool"}
@@ -59,11 +55,7 @@ Web server popularity
 Java app server popularity
 
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Architectural-styles2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Architectural-styles2.png "image_tooltip")
+![alt_text](../images/Architectural-styles2.png "image_tooltip")
 
 
 ###### {"semantic":"explanation"}
@@ -547,10 +539,10 @@ A 2017 Akamai study shows that every 100-millisecond delay in website load time 
 
 ###### {"semantic":"metrics"}
 
-![alt_text](images/Architectural-styles3.png "image_tooltip")
+![alt_text](../images/Architectural-styles3.png "image_tooltip")
 
 
-![alt_text](images/Architectural-styles4.png "image_tooltip")
+![alt_text](../images/Architectural-styles4.png "image_tooltip")
 
 
 ###### {"semantic":"metrics"}
