@@ -1,7 +1,6 @@
 package com.stanislavgrujic.documentimporter.web;
 
 import com.stanislavgrujic.documentimporter.model.Paragraph;
-import com.stanislavgrujic.documentimporter.repository.ParagraphRepository;
 import com.stanislavgrujic.documentimporter.service.ParagraphService;
 import com.stanislavgrujic.documentimporter.web.dto.TopicDto;
 import com.stanislavgrujic.documentimporter.web.dto.TopicsResponseDto;
@@ -25,7 +24,10 @@ public class TopicsController {
   public ResponseEntity<TopicsResponseDto> topics() {
     List<Paragraph> paragraphs = service.getTopics();
     List<TopicDto> topics = paragraphs.stream()
-                                      .map(paragraph -> new TopicDto(paragraph.getId(), paragraph.getParent().getId(), paragraph.getTitle()))
+                                      .map(paragraph -> {
+                                        Long parentId = paragraph.getParent() == null ? null : paragraph.getParent().getId();
+                                        return new TopicDto(paragraph.getId(), parentId, paragraph.getTitle());
+                                      })
                                       .collect(Collectors.toList());
     return ResponseEntity.ok(new TopicsResponseDto(topics));
   }
