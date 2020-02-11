@@ -2,6 +2,7 @@ package com.stanislavgrujic.documentimporter.service;
 
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.repository.ParagraphRepository;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,9 @@ public class ParagraphService {
   }
 
   public List<Paragraph> findKnowledgeBlocks(String title) {
+    if (StringUtils.isEmpty(title)) {
+      return repository.findAll();
+    }
     return repository.findByTitleContaining(title);
   }
 }
