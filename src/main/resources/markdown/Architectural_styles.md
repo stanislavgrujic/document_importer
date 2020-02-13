@@ -169,19 +169,19 @@ it, and produces some output data. Jobs often take a while (from a few minutes t
 
 ### Messaging systems 
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:05:15 - 00:06:19", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "time-period":"00:05:15 - 00:06:19", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Why so many different messaging tools?
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:06:21 - 00:14:20", "source-author":"Clemens Vasters"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "time-period":"00:06:21 - 00:14:20", "source-author":"Clemens Vasters"}
 
 Why so many different messaging tools?
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:14:25 - 00:21:38", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "time-period":"00:14:25 - 00:21:38", "source-author":"Clemens Vasters"}
 
 Different cases with different architecture
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=-3gOqR_TGEs", "Time-period":"00:17:49 - 00:26:43", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=-3gOqR_TGEs", "time-period":"00:17:49 - 00:26:43", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Messaging vs eventing
 
@@ -303,11 +303,11 @@ The boundary between CEP and stream analytics is blurry, but as a general rule, 
 
 Many open source distributed stream processing frameworks are designed with analytics in mind: for example, Apache Storm, Spark Streaming, Flink, Concord, Samza, and Kafka Streams. Hosted services include Google Cloud Dataflow and Azure Stream Analytics.
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=avi-TZI9t2I", "Time-period":"00:01:55 - 00:18:20", "source-author":"Martin Kleppmann", "mastery":"medium", "tags":"LinkedIn, example"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=avi-TZI9t2I", "time-period":"00:01:55 - 00:18:20", "source-author":"Martin Kleppmann", "mastery":"medium", "tags":"LinkedIn, example"}
 
 Stream processing explanation
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=fU9hR3kiOK0", "Time-period":"00:29:50 - 00:35:22", "source-author":"Martin Kleppmann", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=fU9hR3kiOK0", "time-period":"00:29:50 - 00:35:22", "source-author":"Martin Kleppmann", "mastery":"advanced"}
 
 Stream everywhere
 
@@ -378,7 +378,7 @@ Unlike the other window types, a session window has no fixed duration. Instead, 
 
 #### Event driven architecture 
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
 
 Event driven architecture intro and event/message types
 
@@ -428,7 +428,7 @@ Besides the performance reasons, there may also be circumstances in which you ne
 
 Truly deleting data is surprisingly hard, since copies can live in many places: for example, storage engines, filesystems, and SSDs often write to a new location rather than overwriting in place, and backups are often deliberately immutable to prevent accidental deletion or corruption. Deletion is more a matter of “making it harder to retrieve the data” than actually “making it impossible to retrieve the data.”
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:20:38 - 00:30:36", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:20:38 - 00:30:36", "source-author":"Allard Buijze"}
 
 Event sourcing intro
 
@@ -583,23 +583,23 @@ You must run multiple instances of the application on multiple machines in order
 
 Google has around 30k engineers and use about 8 different programming languages. That means 1 programming languages for every 4k engineers.
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:01:16 - 00:10:31", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:01:16 - 00:10:31", "source-author":"Allard Buijze"}
 
 Microservices intro through history
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:02:42 - 00:03:40", "source-author":"Bernd Rucker", "tags":Surway"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:02:42 - 00:03:40", "source-author":"Bernd Rucker", "tags":Surway"}
 
 Microservices - assumption that something is always broken
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:08:53 - 00:10:30", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:08:53 - 00:10:30", "source-author":"Allard Buijze"}
 
 Proper path toward microservices
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:10:37 - 00:11:14", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:10:37 - 00:11:14", "source-author":"Allard Buijze"}
 
 Service location transparency
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:40:20 - 00:46:50", "source-author":"Clemens Vasters", "mastery":"medium", "tags":"Example, Azure"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:40:20 - 00:46:50", "source-author":"Clemens Vasters", "mastery":"medium", "tags":"Example, Azure"}
 
 Service location transparency
 
@@ -616,50 +616,50 @@ Drawbacks:
 *   Deployment complexity. In production, there is also the operational complexity of deploying and managing a system comprised of many different services.
 *   Increased memory consumption. The microservice architecture replaces N monolithic application instances with NxM services instances. If each service runs in its own JVM (or equivalent), which is usually necessary to isolate the instances, then there is the overhead of M times as many JVM runtimes. Moreover, if each service runs on its own VM (e.g. EC2 instance), as is the case at Netflix, the overhead is even higher.
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=r3f9nUw5I0g", "Time-period":"00:18:01 - 00:18:58", "source-author":"Bernd Rucker", "tags":"Surway"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=r3f9nUw5I0g", "time-period":"00:18:01 - 00:18:58", "source-author":"Bernd Rucker", "tags":"Surway"}
 
 Microservices - most frequent problems
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:03:00 - 00:07:40", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:03:00 - 00:07:40", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 What is service & system - organizational perspektive
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:42:20 - 00:45:16", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:42:20 - 00:45:16", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Service - communication context
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:16:00 - 00:20:05", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:16:00 - 00:20:05", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Service organizational perspective and how it is similar to old SOA concept
 
-###### {"semantic":"warning", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:07:46 - 00:12:12", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"warning", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:07:46 - 00:12:12", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 API Gateway as single point of failure that resembles old ESB in SOA
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:12:18 - 00:15:35", "source-author":"Clemens Vasters", "tags":"Azure"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:12:18 - 00:15:35", "source-author":"Clemens Vasters", "tags":"Azure"}
 
 Azure microservices
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:23:06 - 00:25:19", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:23:06 - 00:25:19", "source-author":"Clemens Vasters"}
 
 Service - scalability perspective
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:33:48 - 00:38:34", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:33:48 - 00:38:34", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 Layers, Tiers and Services
 
 
 #### Distributed transactions 
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "Time-period":"00:00:57 - 00:12:45", "source-author":"Jimmy Bogard"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "time-period":"00:00:57 - 00:12:45", "source-author":"Jimmy Bogard"}
 
 Distributed transactions intro
 
-###### {"semantic":"cons", "source-link":"https://www.youtube.com/watch?v=5ZjhNTM8XU8","Time-period":"00:27:39 - 00:40:00", "source-author":"Martin Kleppmann", "mastery":"advanced"}
+###### {"semantic":"cons", "source-link":"https://www.youtube.com/watch?v=5ZjhNTM8XU8","time-period":"00:27:39 - 00:40:00", "source-author":"Martin Kleppmann", "mastery":"advanced"}
 
 Distributed transactions limitation
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "Time-period":"00:12:45 - 01:01:05", "source-author":"Jimmy Bogard", "tags":"RabbitMQ,MongoDB, CosmosDB", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "time-period":"00:12:45 - 01:01:05", "source-author":"Jimmy Bogard", "tags":"RabbitMQ,MongoDB, CosmosDB", "mastery":"advanced"}
 
 An Apostate's Implementation
 
@@ -689,56 +689,56 @@ With **_orchestration_**, there is one central service which coordinates other s
 
 With **_choreography_**, each service knows its job and based on event’s messages it receives, it determines its behavior. In this approach, a service emits an event, and if a service needs to react on it, it subscribes for receiving that event. This approach leads to a decoupled architecture, where each service contains business logic specific for itself. It is easier to change services in such system. The downside of this approach is that it’s business logic is implicit, and it might be difficult to follow the flow. Monitoring the business flow is difficult, since the logic is distributed among other services. Also, instead of monitoring one service, it is needed to monitor many of them, and be able to show the aggregated results, but also have the ability to drill down into each one of them.
 
-###### {"semantic":"tool", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:18:29 - 00:20:00", "source-author":"Bernd Rucker"}
+###### {"semantic":"tool", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:18:29 - 00:20:00", "source-author":"Bernd Rucker"}
 
 Workflow engines on the market
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:19:46 - 00:24:28", "source-author":"Bernd Rucker"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:19:46 - 00:24:28", "source-author":"Bernd Rucker"}
 
 Workflow engines - Comunda example
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:24:08 - 00:26:37","Time-period":"00:27:50 - 00:28:40", "source-author":"Bernd Rucker", "tags":"example"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:24:08 - 00:26:37","time-period":"00:27:50 - 00:28:40", "source-author":"Bernd Rucker", "tags":"example"}
 
 Idempotency
 
 
 #### Service coupling  
 
-###### {"semantic":"explanation", "source-link":"https://www.infoq.com/presentations/netflix-play-api/", "Time-period":"00:11:10 - 00:15:15", "source-author":"Suudhan Rangarajan"}
+###### {"semantic":"explanation", "source-link":"https://www.infoq.com/presentations/netflix-play-api/", "time-period":"00:11:10 - 00:15:15", "source-author":"Suudhan Rangarajan"}
 
 Service coupling at Netflix
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:30:38 - 00:35:32", "source-author":"Allard Buijze", "tags":"bounded context"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:30:38 - 00:35:32", "source-author":"Allard Buijze", "tags":"bounded context"}
 
 Event sourcing intro
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:20:07 - 00:22:02", "source-author":"Clemens Vasters", "tags":"Azure"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:20:07 - 00:22:02", "source-author":"Clemens Vasters", "tags":"Azure"}
 
 Why shared data stores are bad
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:27:21 - 00:29:08", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period":"00:27:21 - 00:29:08", "source-author":"Clemens Vasters"}
 
 Emissaries and SDKs
 
 
 #### Misbehaviour handling 
 
-###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:03:55 - 00:10:25", "source-author":"Bernd Rucker", "mastery":"medium"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:03:55 - 00:10:25", "source-author":"Bernd Rucker", "mastery":"medium"}
 
 Circuit breaker example
 
-###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:10:43 - 00:17:30", "source-author":"Bernd Rucker", "mastery":"medium"}
+###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:10:43 - 00:17:30", "source-author":"Bernd Rucker", "mastery":"medium"}
 
 Misbehaviour handling - real use case
 
-###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:29:05 - 00:29:55", "source-author":"Bernd Rucker", "tags":"example"}
+###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "time-period":"00:29:05 - 00:29:55", "source-author":"Bernd Rucker", "tags":"example"}
 
 Scenario of failures between services
 
 
 #### Service Scope 
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:32:23 - 00:33:45", "source-author":"Allard Buijze", "tags":"bounded context"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:32:23 - 00:33:45", "source-author":"Allard Buijze", "tags":"bounded context"}
 
 Bounded Context Example
 
@@ -748,10 +748,10 @@ Bounded Context Example
 
 ## IoT 
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "Time-period":"00:01:35 - 00:03:02", "source-author":"Clemens Vasters"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "time-period":"00:01:35 - 00:03:02", "source-author":"Clemens Vasters"}
 
 First IoT system
 
-###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "Time-period":"00:04:30 - 00:10:54", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "time-period":"00:04:30 - 00:10:54", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 Device-Cloud connectivity challenges including scalability
