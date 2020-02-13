@@ -11,7 +11,7 @@ Structural styles:
 *   Microservices
 *   Modular monolith
 
-###### {"semantic":"types", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"types", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Styles that address different place where complexity and bottleneck is:
 
@@ -27,9 +27,9 @@ Processing styles:
 *   Batch processing system / offline systems
 *   Stream processing system / near-real-time systems
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh)", "source-author":"Martin Kleppmann", "source-details":"Read entire section >transaction processing or analytics<"}
+###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh", "source-author":"Martin Kleppmann", "source-details":"Read entire section >transaction processing or analytics<"}
 
-![alt_text](../images/Architectural-styles0.png "image_tooltip")
+![alt_text](../static/images/Architectural-styles0.png "image_tooltip")
 
 
 
@@ -38,7 +38,7 @@ Processing styles:
 
 ### OLTP / service / online system 
 
-###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"intro-definition", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 A service waits for a request or instruction from a client to arrive. When one is received, the service tries to handle it as quickly as possible and sends a response back. Response time is usually the primary measure of performance of a service, and availability is often very important (if the client can’t reach the service, the user will probably get an error message).
 
@@ -47,7 +47,7 @@ A service waits for a request or instruction from a client to arrive. When one i
 Web server popularity
 
 
-![alt_text](../images/Architectural-styles1.png "image_tooltip")
+![alt_text](../static/images/Architectural-styles1.png "image_tooltip")
 
 
 ###### {"semantic":"tool"}
@@ -55,7 +55,7 @@ Web server popularity
 Java app server popularity
 
 
-![alt_text](../images/Architectural-styles2.png "image_tooltip")
+![alt_text](../static/images/Architectural-styles2.png "image_tooltip")
 
 
 ###### {"semantic":"explanation"}
@@ -160,7 +160,7 @@ As an example, software that’s scalable can be easily picked up and dropped on
 
 ### Batch processing system / offline systems 
 
-###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch)", "source-author":"Martin Kleppmann", "source-details":"Read entire section >Batch processing<"}
+###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch10.html#ch_batch", "source-author":"Martin Kleppmann", "source-details":"Read entire section >Batch processing<"}
 
 A batch processing system takes a large amount of input data, runs a job to process
 
@@ -169,19 +169,19 @@ it, and produces some output data. Jobs often take a while (from a few minutes t
 
 ### Messaging systems 
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=ITrlLErsqzY](https://www.youtube.com/watch?v=ITrlLErsqzY)", "Time-period":"00:05:15 - 00:06:19", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:05:15 - 00:06:19", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Why so many different messaging tools?
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=ITrlLErsqzY](https://www.youtube.com/watch?v=ITrlLErsqzY)", "Time-period":"00:06:21 - 00:14:20", "source-author":"Clemens Vasters"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:06:21 - 00:14:20", "source-author":"Clemens Vasters"}
 
 Why so many different messaging tools?
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=ITrlLErsqzY](https://www.youtube.com/watch?v=ITrlLErsqzY)", "Time-period":"00:14:25 - 00:21:38", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=ITrlLErsqzY", "Time-period":"00:14:25 - 00:21:38", "source-author":"Clemens Vasters"}
 
 Different cases with different architecture
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=-3gOqR_TGEs](https://www.youtube.com/watch?v=-3gOqR_TGEs)", "Time-period":"00:17:49 - 00:26:43", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=-3gOqR_TGEs", "Time-period":"00:17:49 - 00:26:43", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Messaging vs eventing
 
@@ -206,7 +206,7 @@ Messaging & eventing characteristics
     *   Usually sent to one recipient
     *   Typically lives in queues because sender want that one party pick up that message and process it once 
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann", "tags":"example"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann", "tags":"example"}
 
 **Event ordering**
 
@@ -220,7 +220,7 @@ With systems that are small enough, constructing a totally ordered event log is 
 
 There is no ideal solution that provides distributed systems that offer event orders and that’s why for example Kafka offers ordering on partition level only which is hosted on one node/machine.
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 The big advantage of log-based integration is loose coupling between the various components, which manifests itself in two ways:
 
@@ -232,21 +232,21 @@ The big advantage of log-based integration is loose coupling between the various
 
 #### Stream processing system / near-real-time systems  
 
-###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"intro-definition", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Stream processing is somewhere between online and offline/batch processing (so it is sometimes called near-real-time or nearline processing). Like a batch processing system, a stream processor consumes inputs and produces outputs (rather than responding to requests). However, a stream job operates on events shortly after they happen, whereas a batch job operates on a fixed set of input data. This difference allows stream processing systems to have lower latency than the equivalent batch systems. As stream processing builds upon batch processing.
 
-###### {"semantic":"why", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"why", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 In reality, a lot of data is unbounded because it arrives gradually over time: your users produced data yesterday and today, and they will continue to produce more data tomorrow. Unless you go out of business, this process never ends, and so the dataset is never “complete” in any meaningful way [1]. Thus, batch processors must artificially divide the data into chunks of fixed duration: for example, processing a day’s worth of data at the end of every day, or processing an hour’s worth of data at the end of every hour. The problem with daily batch processes is that changes in the input are only reflected in the output a day later, which is too slow for many impatient users. To reduce the delay, we can run the processing more frequently—say, processing a second’s worth of data at the end of every second—or even continuously, abandoning the fixed time slices entirely and simply processing every event as it happens. That is the idea behind stream processing. A “stream” refers to data that is incrementally made available over time, for example stdin and stdout, TCP connection…
 
 We will look at event streams as a data management mechanism: the unbounded, incrementally processed counterpart to the batch data.
 
-###### {"semantic":"metrics", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"metrics", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Let’s do a back-of-the-envelope calculation. At the time of writing, a typical large hard drive has a capacity of 6 TB and a sequential write throughput of 150 MB/s. If you are writing messages at the fastest possible rate, it takes about 11 hours to fill the drive. Thus, the disk can buffer 11 hours’ worth of messages, after which it will start overwriting old messages. This ratio remains the same, even if you use many hard drives and machines. In practice, deployments rarely use the full write bandwidth of the disk, so the log can typically keep a buffer of several days’ or even weeks’ worth of messages.
 
-###### {"semantic":"types", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"types", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Three options of stream processing:
 
@@ -256,11 +256,11 @@ Three options of stream processing:
 2. push the events to users in some way, for example by sending email alerts or push notifications, or by streaming the events to a real-time dashboard where they are visualized. In this case, a human is the ultimate consumer of the stream.
 3. process one or more input streams to produce one or more output streams. Streams may go through a pipeline consisting of several such processing stages before they eventually end up at an output (option 1 or 2). This case is usually called “stream analytics” or “complex event processing” (CEP) and includes searching for certain event patterns.
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 The one crucial difference to batch jobs is that a stream never ends. This difference has many implications: sorting does not make sense with an unbounded dataset, and so sort-merge joins cannot be used. Fault-tolerance mechanisms must also change: with a batch job that has been running for a few minutes, a failed task can simply be restarted from the beginning, but with a stream job that has been running for several years, restarting from the beginning after a crash may not be a viable option.
 
-###### {"semantic":"use-case", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"use-case", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Stream processing has long been used for monitoring purposes, where an organization wants to be alerted if certain things happen. For example:
 
@@ -273,11 +273,11 @@ Stream processing has long been used for monitoring purposes, where an organizat
 
 These kinds of applications require quite sophisticated pattern matching and correlations.
 
-###### {"semantic":"tip", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"tip", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 In these systems, the relationship between queries and data is reversed compared to normal databases. Usually, a database stores data persistently and treats queries as transient: when a query comes in, the database searches for data matching the query, and then forgets about the query when it has finished. CEP engines reverse these roles: queries are stored long-term, and events from the input streams continuously flow past them in search of a query that matches an event pattern.
 
-###### {"semantic":"use-case", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"use-case", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Stream analytics use cases:
 
@@ -295,41 +295,41 @@ over a few minutes smoothes out irrelevant fluctuations from one second to the n
 
 while still giving you a timely picture of any changes in traffic pattern.
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 The boundary between CEP and stream analytics is blurry, but as a general rule, analytics tends to be less interested in finding specific event sequences and is more oriented toward aggregations and statistical metrics over a large number of events
 
-###### {"semantic":"tool", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"tool", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Many open source distributed stream processing frameworks are designed with analytics in mind: for example, Apache Storm, Spark Streaming, Flink, Concord, Samza, and Kafka Streams. Hosted services include Google Cloud Dataflow and Azure Stream Analytics.
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=avi-TZI9t2I](https://www.youtube.com/watch?v=avi-TZI9t2I)", "Time-period":"00:01:55 - 00:18:20", "source-author":"Martin Kleppmann", "mastery":"medium", "tags":"LinkedIn, example"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=avi-TZI9t2I", "Time-period":"00:01:55 - 00:18:20", "source-author":"Martin Kleppmann", "mastery":"medium", "tags":"LinkedIn, example"}
 
 Stream processing explanation
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=fU9hR3kiOK0](https://www.youtube.com/watch?v=fU9hR3kiOK0)", "Time-period":"00:29:50 - 00:35:22", "source-author":"Martin Kleppmann", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=fU9hR3kiOK0", "Time-period":"00:29:50 - 00:35:22", "source-author":"Martin Kleppmann", "mastery":"advanced"}
 
 Stream everywhere
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Stream of changes to a database can be used to keep derived data systems, such as caches, search indexes, and data warehouses, up to date with a source database. We can regard these examples as specific cases of maintaining materialized views: deriving an alternative view onto some dataset so that you can query it efficiently.
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 In event sourcing, application state is maintained by applying a log of events; here the application state is also a kind of materialized view. Unlike stream analytics scenarios, it is usually not sufficient to consider only events within some time window: building the materialized view potentially requires all events over an arbitrary time period, apart from any obsolete events that may be discarded by log compaction. In effect, you need a window that stretches all the way back to the beginning of time.
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Conventional search engines first index the documents and then run queries over the index. By contrast, searching a stream turns the processing on its head: the queries are stored, and the documents run past the queries.
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 The batch process needs to look at the timestamp embedded in each event. There is no point in looking at the system clock of the machine running the batch process, because the time at which the process is run has nothing to do with the time at which the events actually occurred. Using the timestamps in the events allows the processing to be deterministic: running the same process again on the same input yields the same result.
 
 On the other hand, many stream processing frameworks use the local system clock on the processing machine (the processing time) to determine windowing. This approach has the advantage of being simple, and it is reasonable if the delay between event creation and event processing is negligibly short. However, it breaks down if there is any significant processing lag—i.e., if the processing may happen noticeably later than the time at which the event actually occurred.
 
-###### {"semantic":"example", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 There are many reasons why processing may be delayed. Message delays can also lead to unpredictable ordering of messages.
 
@@ -378,7 +378,7 @@ Unlike the other window types, a session window has no fixed duration. Instead, 
 
 #### Event driven architecture 
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
 
 Event driven architecture intro and event/message types
 
@@ -388,54 +388,54 @@ Event driven architecture intro and event/message types
 
 ##### Event sourcing 
 
-###### {"semantic":"intro-definition", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"intro-definition", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Event sourcing involves storing all changes to the application state as a log of change events.
 
 The application logic is explicitly built on the basis of immutable events that are written to an event log. In this case, the event store is append only, and updates or deletes are discouraged or prohibited. Events are designed to reflect things that happened at the application level, rather than low-level state changes.
 
-###### {"semantic":"pros", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"pros", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Event sourcing is a powerful technique for data modeling: from an application point of view it is more meaningful to record the user’s actions as immutable events, rather than recording the effect of those actions on a mutable database. Event sourcing makes it easier to evolve applications over time, helps with debugging by making it easier to understand after the fact why something happened, and guards against application bugs
 
-###### {"semantic":"tip", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"tip", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Specialized databases such as Event Store have been developed to support applications using event sourcing, but in general the approach is independent of any particular tool. A conventional database or a log-based message broker can also be used to build applications in this style.
 
-###### {"semantic":"warning", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"warning", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Applications that use event sourcing need to take the log of events (representing the data written to the system) and transform it into application state that is suitable for showing to a user
 
-###### {"semantic":"explanation", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 The event sourcing philosophy is careful to distinguish between **events** and **commands**. When a request from a user first arrives, it is initially a command: at this point it may still fail, for example because some integrity condition is violated. The application must first validate that it can execute the command. If the validation is successful and the command is accepted, it becomes an event, which is durable and immutable.
 
-###### {"semantic":"example", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 If a user tries to register a particular username, or reserve a seat on an airplane or in a theater, then the application needs to check that the username or seat is not already taken. When that check has succeeded, the application can generate an event to indicate that a particular username was registered by a particular user ID, or that a particular seat has been reserved for a particular customer. At the point when the event is generated, it becomes a fact. Even if the customer later decides to change or cancel the reservation, the fact remains true that they formerly held a reservation for a particular seat, and the change or cancellation is a separate event that is added later. A consumer of the event stream is not allowed to reject an event: by the time the consumer sees the event, it is already an immutable part of the log, and it may have already been seen by other consumers. Thus, any validation of a command needs to happen synchronously, before it becomes an event—for example, by using a serializable transaction that atomically validates the command and publishes the event. Alternatively, the user request to reserve a seat could be split into two events: first a tentative reservation, and then a separate confirmation event once the reservation has been validated. This split allows the validation to take place in an asynchronous process.
 
-###### {"semantic":"example", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Immutability in databases is an old idea. For example, accountants have been using immutability for centuries in financial bookkeeping. When a transaction occurs, it is recorded in an append-only ledger, which is essentially a log of events describing money, goods, or services that have changed hands. The accounts, such as profit and loss or the balance sheet, are derived from the transactions in the ledger by adding them up If a mistake is made, accountants don’t erase or change the incorrect transaction in the ledger—instead, they add another transaction that compensates for the mistake, for example refunding an incorrect charge. The incorrect transaction still remains in the ledger forever, because it might be important for auditing reasons. If incorrect figures, derived from the incorrect ledger, have already been published, then the figures for the next accounting period include a correction. This process is entirely normal in accounting
 
-###### {"semantic":"pros", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"pros", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Immutable events also capture more information than just the current state. For example, on a shopping website, a customer may add an item to their cart and then remove it again. Although the second event cancels out the first event from the point of view of order fulfillment, it may be useful to know for analytics purposes that the customer was considering a particular item but then decided against it. Perhaps they will choose to buy it in the future, or perhaps they found a substitute. This information is recorded in an event log, but would be lost in a database that deletes items when they are removed from the cart.
 
-###### {"semantic":"warning", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"warning", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Besides the performance reasons, there may also be circumstances in which you need data to be deleted for administrative reasons, in spite of all immutability. For example, privacy regulations may require deleting a user’s personal information after they close their account, data protection legislation may require erroneous information to be removed, or an accidental leak of sensitive information may need to be contained.
 
 Truly deleting data is surprisingly hard, since copies can live in many places: for example, storage engines, filesystems, and SSDs often write to a new location rather than overwriting in place, and backups are often deliberately immutable to prevent accidental deletion or corruption. Deletion is more a matter of “making it harder to retrieve the data” than actually “making it impossible to retrieve the data.”
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:20:38 - 00:30:36", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:20:38 - 00:30:36", "source-author":"Allard Buijze"}
 
 Event sourcing intro
 
 
 ##### CQRS 
 
-###### {"semantic":"why", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"why", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Storing data is normally quite straightforward if you don’t have to worry about how it is going to be queried and accessed; many of the complexities of schema design, indexing, and storage engines are the result of wanting to support certain query and access patterns. For this reason, you gain a lot of flexibility by separating the form in which data is written from the form it is read, and by allowing several different read views. This idea is sometimes known as command query
 
@@ -458,7 +458,7 @@ for keeping it consistent with the event log.
 
 ##### Actor model 
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 Although actor based systems are also based on messages and events, we normally don’t think of them as stream processors:
 
@@ -468,7 +468,7 @@ Although actor based systems are also based on messages and events, we normally 
 *   Communication between actors is often ephemeral and one-to-one, whereas event logs are durable and multi-subscriber.
 *   Actors can communicate in arbitrary ways (including cyclic request/response patterns), but stream processors are usually set up in acyclic pipelines where every stream is the output of one particular job, and derived from a well-defined set of input streams.
 
-###### {"semantic":"cons", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann"}
+###### {"semantic":"cons", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann"}
 
 It is also possible to process streams using actor frameworks. However, many such frameworks do not guarantee message delivery in the case of crashes, so the processing is not fault-tolerant unless you implement additional retry logic.
 
@@ -517,7 +517,7 @@ Windows server datacenter edition <span style="text-decoration:underline;">143 e
 
 AWS EC2 8 cores, 32GB 130$ with discount, <span style="text-decoration:underline;">350 $ / month</span> on demand.
 
-###### {"semantic":"metrics", "source-link":"[https://www.nngroup.com/articles/response-times-3-important-limits/](https://www.nngroup.com/articles/response-times-3-important-limits/)", "source-author":"Jakob Nielsen"}
+###### {"semantic":"metrics", "source-link":"https://www.nngroup.com/articles/response-times-3-important-limits/", "source-author":"Jakob Nielsen"}
 
 **Acceptable response time in UI**
 
@@ -527,7 +527,7 @@ AWS EC2 8 cores, 32GB 130$ with discount, <span style="text-decoration:underline
 *   **1.0 second** is about the limit for the **user's flow of thought** to stay uninterrupted, even though the user will notice the delay. Normally, no special feedback is necessary during delays of more than 0.1 but less than 1.0 second, but the user does lose the feeling of operating directly on the data.
 *   **10 seconds** is about the limit for **keeping the user's attention** focused on the dialogue. For longer delays, users will want to perform other tasks while waiting for the computer to finish, so they should be given feedback indicating when the computer expects to be done. Feedback during the delay is especially important if the response time is likely to be highly variable, since users will then not know what to expect.
 
-###### {"semantic":"metrics", "source-link":"[https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales/](https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales/)", "source-author":"Yoav Einav"}
+###### {"semantic":"metrics", "source-link":"https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales/", "source-author":"Yoav Einav"}
 
 Amazon has observed that a 100 ms increase in response time reduces
 
@@ -539,10 +539,10 @@ A 2017 Akamai study shows that every 100-millisecond delay in website load time 
 
 ###### {"semantic":"metrics"}
 
-![alt_text](../images/Architectural-styles3.png "image_tooltip")
+![alt_text](http:///images/Architectural-styles3.png "image_tooltip")
 
 
-![alt_text](../images/Architectural-styles4.png "image_tooltip")
+![alt_text](../static/images/Architectural-styles4.png "image_tooltip")
 
 
 ###### {"semantic":"metrics"}
@@ -583,27 +583,27 @@ You must run multiple instances of the application on multiple machines in order
 
 Google has around 30k engineers and use about 8 different programming languages. That means 1 programming languages for every 4k engineers.
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:01:16 - 00:10:31", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:01:16 - 00:10:31", "source-author":"Allard Buijze"}
 
 Microservices intro through history
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:02:42 - 00:03:40", "source-author":"Bernd Rucker", "tags":Surway"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:02:42 - 00:03:40", "source-author":"Bernd Rucker", "tags":Surway"}
 
 Microservices - assumption that something is always broken
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:08:53 - 00:10:30", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:08:53 - 00:10:30", "source-author":"Allard Buijze"}
 
 Proper path toward microservices
 
-###### {"semantic":"why", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:10:37 - 00:11:14", "source-author":"Allard Buijze"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:10:37 - 00:11:14", "source-author":"Allard Buijze"}
 
 Service location transparency
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:40:20 - 00:46:50", "source-author":"Clemens Vasters", "mastery":"medium", "tags":"Example, Azure"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:40:20 - 00:46:50", "source-author":"Clemens Vasters", "mastery":"medium", "tags":"Example, Azure"}
 
 Service location transparency
 
-###### {"semantic":"cons", "source-link":"[https://microservices.io/patterns/microservices.html](https://microservices.io/patterns/microservices.html)", "source-author":"Chris Richardson"}
+###### {"semantic":"cons", "source-link":"https://microservices.io/patterns/microservices.html", "source-author":"Chris Richardson"}
 
 Drawbacks:
 
@@ -616,54 +616,54 @@ Drawbacks:
 *   Deployment complexity. In production, there is also the operational complexity of deploying and managing a system comprised of many different services.
 *   Increased memory consumption. The microservice architecture replaces N monolithic application instances with NxM services instances. If each service runs in its own JVM (or equivalent), which is usually necessary to isolate the instances, then there is the overhead of M times as many JVM runtimes. Moreover, if each service runs on its own VM (e.g. EC2 instance), as is the case at Netflix, the overhead is even higher.
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=r3f9nUw5I0g](https://www.youtube.com/watch?v=r3f9nUw5I0g)", "Time-period":"00:18:01 - 00:18:58", "source-author":"Bernd Rucker", "tags":"Surway"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=r3f9nUw5I0g", "Time-period":"00:18:01 - 00:18:58", "source-author":"Bernd Rucker", "tags":"Surway"}
 
 Microservices - most frequent problems
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:03:00 - 00:07:40", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:03:00 - 00:07:40", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 What is service & system - organizational perspektive
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:42:20 - 00:45:16", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:42:20 - 00:45:16", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Service - communication context
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:16:00 - 00:20:05", "source-author":"Clemens Vasters", "mastery":"medium"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:16:00 - 00:20:05", "source-author":"Clemens Vasters", "mastery":"medium"}
 
 Service organizational perspective and how it is similar to old SOA concept
 
-###### {"semantic":"warning", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:07:46 - 00:12:12", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"warning", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:07:46 - 00:12:12", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 API Gateway as single point of failure that resembles old ESB in SOA
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:12:18 - 00:15:35", "source-author":"Clemens Vasters", "tags":"Azure"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:12:18 - 00:15:35", "source-author":"Clemens Vasters", "tags":"Azure"}
 
 Azure microservices
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:23:06 - 00:25:19", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:23:06 - 00:25:19", "source-author":"Clemens Vasters"}
 
 Service - scalability perspective
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:33:48 - 00:38:34", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:33:48 - 00:38:34", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 Layers, Tiers and Services
 
 
 #### Distributed transactions 
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=AUrKofVRHV4](https://www.youtube.com/watch?v=AUrKofVRHV4)", "Time-period":"00:00:57 - 00:12:45", "source-author":"Jimmy Bogard"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "Time-period":"00:00:57 - 00:12:45", "source-author":"Jimmy Bogard"}
 
 Distributed transactions intro
 
-###### {"semantic":"cons", "source-link":"[https://www.youtube.com/watch?v=5ZjhNTM8XU8](https://www.youtube.com/watch?v=5ZjhNTM8XU8)","Time-period":"00:27:39 - 00:40:00", "source-author":"Martin Kleppmann", "mastery":"advanced"}
+###### {"semantic":"cons", "source-link":"https://www.youtube.com/watch?v=5ZjhNTM8XU8","Time-period":"00:27:39 - 00:40:00", "source-author":"Martin Kleppmann", "mastery":"advanced"}
 
 Distributed transactions limitation
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=AUrKofVRHV4](https://www.youtube.com/watch?v=AUrKofVRHV4)", "Time-period":"00:12:45 - 01:01:05", "source-author":"Jimmy Bogard", "tags":"RabbitMQ,MongoDB, CosmosDB", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=AUrKofVRHV4", "Time-period":"00:12:45 - 01:01:05", "source-author":"Jimmy Bogard", "tags":"RabbitMQ,MongoDB, CosmosDB", "mastery":"advanced"}
 
 An Apostate's Implementation
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/)", "source-author":"Martin Kleppmann", "mastery":"advanced"}
+###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Martin Kleppmann", "mastery":"advanced"}
 
 **Distributed transactions vs derived data**
 
@@ -689,56 +689,56 @@ With **_orchestration_**, there is one central service which coordinates other s
 
 With **_choreography_**, each service knows its job and based on event’s messages it receives, it determines its behavior. In this approach, a service emits an event, and if a service needs to react on it, it subscribes for receiving that event. This approach leads to a decoupled architecture, where each service contains business logic specific for itself. It is easier to change services in such system. The downside of this approach is that it’s business logic is implicit, and it might be difficult to follow the flow. Monitoring the business flow is difficult, since the logic is distributed among other services. Also, instead of monitoring one service, it is needed to monitor many of them, and be able to show the aggregated results, but also have the ability to drill down into each one of them.
 
-###### {"semantic":"tool", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:18:29 - 00:20:00", "source-author":"Bernd Rucker"}
+###### {"semantic":"tool", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:18:29 - 00:20:00", "source-author":"Bernd Rucker"}
 
 Workflow engines on the market
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:19:46 - 00:24:28", "source-author":"Bernd Rucker"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:19:46 - 00:24:28", "source-author":"Bernd Rucker"}
 
 Workflow engines - Comunda example
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:24:08 - 00:26:37","Time-period":"00:27:50 - 00:28:40", "source-author":"Bernd Rucker", "tags":"example"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:24:08 - 00:26:37","Time-period":"00:27:50 - 00:28:40", "source-author":"Bernd Rucker", "tags":"example"}
 
 Idempotency
 
 
 #### Service coupling  
 
-###### {"semantic":"explanation", "source-link":"[https://www.infoq.com/presentations/netflix-play-api/](https://www.infoq.com/presentations/netflix-play-api/)", "Time-period":"00:11:10 - 00:15:15", "source-author":"Suudhan Rangarajan"}
+###### {"semantic":"explanation", "source-link":"https://www.infoq.com/presentations/netflix-play-api/", "Time-period":"00:11:10 - 00:15:15", "source-author":"Suudhan Rangarajan"}
 
 Service coupling at Netflix
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:30:38 - 00:35:32", "source-author":"Allard Buijze", "tags":"bounded context"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:30:38 - 00:35:32", "source-author":"Allard Buijze", "tags":"bounded context"}
 
 Event sourcing intro
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:20:07 - 00:22:02", "source-author":"Clemens Vasters", "tags":"Azure"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:20:07 - 00:22:02", "source-author":"Clemens Vasters", "tags":"Azure"}
 
 Why shared data stores are bad
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=rXi5CLjIQ9k](https://www.youtube.com/watch?v=rXi5CLjIQ9k)", "Time-period":"00:27:21 - 00:29:08", "source-author":"Clemens Vasters"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "Time-period":"00:27:21 - 00:29:08", "source-author":"Clemens Vasters"}
 
 Emissaries and SDKs
 
 
 #### Misbehaviour handling 
 
-###### {"semantic":"example", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:03:55 - 00:10:25", "source-author":"Bernd Rucker", "mastery":"medium"}
+###### {"semantic":"example", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:03:55 - 00:10:25", "source-author":"Bernd Rucker", "mastery":"medium"}
 
 Circuit breaker example
 
-###### {"semantic":"use-case", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:10:43 - 00:17:30", "source-author":"Bernd Rucker", "mastery":"medium"}
+###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:10:43 - 00:17:30", "source-author":"Bernd Rucker", "mastery":"medium"}
 
 Misbehaviour handling - real use case
 
-###### {"semantic":"use-case", "source-link":"[https://www.youtube.com/watch?v=7uvK4WInq6k](https://www.youtube.com/watch?v=7uvK4WInq6k)", "Time-period":"00:29:05 - 00:29:55", "source-author":"Bernd Rucker", "tags":"example"}
+###### {"semantic":"use-case", "source-link":"https://www.youtube.com/watch?v=7uvK4WInq6k", "Time-period":"00:29:05 - 00:29:55", "source-author":"Bernd Rucker", "tags":"example"}
 
 Scenario of failures between services
 
 
 #### Service Scope 
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=tdd8w9d_d-c](https://www.youtube.com/watch?v=tdd8w9d_d-c)", "Time-period":"00:32:23 - 00:33:45", "source-author":"Allard Buijze", "tags":"bounded context"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "Time-period":"00:32:23 - 00:33:45", "source-author":"Allard Buijze", "tags":"bounded context"}
 
 Bounded Context Example
 
@@ -748,10 +748,10 @@ Bounded Context Example
 
 ## IoT 
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=Esg1BYJdZe0](https://www.youtube.com/watch?v=Esg1BYJdZe0)", "Time-period":"00:01:35 - 00:03:02", "source-author":"Clemens Vasters"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "Time-period":"00:01:35 - 00:03:02", "source-author":"Clemens Vasters"}
 
 First IoT system
 
-###### {"semantic":"explanation", "source-link":"[https://www.youtube.com/watch?v=Esg1BYJdZe0](https://www.youtube.com/watch?v=Esg1BYJdZe0)", "Time-period":"00:04:30 - 00:10:54", "source-author":"Clemens Vasters", "mastery":"advanced"}
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=Esg1BYJdZe0", "Time-period":"00:04:30 - 00:10:54", "source-author":"Clemens Vasters", "mastery":"advanced"}
 
 Device-Cloud connectivity challenges including scalability
