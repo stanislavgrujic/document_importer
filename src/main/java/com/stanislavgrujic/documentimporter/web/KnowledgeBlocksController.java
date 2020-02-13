@@ -35,7 +35,9 @@ public class KnowledgeBlocksController {
 
   private List<ParagraphDto> collectWithChildren(Paragraph paragraph) {
     List<ParagraphDto> paragraphs = new ArrayList<>();
-    paragraphs.add(ParagraphDto.from(paragraph));
+    if (paragraph.getAttributes() != null) {
+      paragraphs.add(ParagraphDto.from(paragraph));
+    }
 
     paragraph.getChildren().forEach(child -> paragraphs.addAll(collectWithChildren(child)));
     return paragraphs;
