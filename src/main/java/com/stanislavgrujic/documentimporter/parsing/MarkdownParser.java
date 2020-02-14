@@ -3,6 +3,7 @@ package com.stanislavgrujic.documentimporter.parsing;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.stanislavgrujic.documentimporter.model.Attributes;
+import com.stanislavgrujic.documentimporter.model.Level;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.model.Semantics;
 import org.apache.commons.text.TextStringBuilder;
@@ -83,6 +84,7 @@ enum MarkdownParser implements State {
 
   private static Gson parser = new GsonBuilder()
       .registerTypeAdapter(Semantics.class, new Semantics.SemanticsJsonDeserializer())
+      .registerTypeAdapter(Level.class, new Level.LevelJsonDeserializer())
       .create();
 
   private static Paragraph parent = null;
