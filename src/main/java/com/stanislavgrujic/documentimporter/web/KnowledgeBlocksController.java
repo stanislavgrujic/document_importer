@@ -1,5 +1,7 @@
 package com.stanislavgrujic.documentimporter.web;
 
+import com.stanislavgrujic.documentimporter.model.Attributes;
+import com.stanislavgrujic.documentimporter.model.Level;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.service.ParagraphService;
 import com.stanislavgrujic.documentimporter.web.dto.KnowledgeBlocksResponseDto;
@@ -23,23 +25,28 @@ public class KnowledgeBlocksController {
   private ParagraphService service;
 
   @GetMapping
-  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocks(@RequestParam(required = false) String title) {
+  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocks(@RequestParam(required = false) String title,
+      @RequestParam(required = false) String level) {
+    List<Level> levels = Level.getLevels(level);
+
     List<Paragraph> paragraphs = service.findKnowledgeBlocks(title);
     List<ParagraphDto> paragraphDtos = paragraphs.stream()
-                                                 .map(this::collectWithChildren)
+                                                 .map(paragraph -> collectWithChildren(paragraph, levels))
                                                  .flatMap(List::stream)
                                                  .collect(Collectors.toList());
 
     return ResponseEntity.ok(new KnowledgeBlocksResponseDto(paragraphDtos));
   }
 
-  private List<ParagraphDto> collectWithChildren(Paragraph paragraph) {
+  private List<ParagraphDto> collectWithChildren(Paragraph paragraph, List<Level> matchingSeniorities) {
+
     List<ParagraphDto> paragraphs = new ArrayList<>();
-    if (paragraph.getAttributes() != null) {
+    Attributes attributes = paragraph.getAttributes();
+    if (attributes != null && matchingSeniorities.contains(attributes.getLevel())) {
       paragraphs.add(ParagraphDto.from(paragraph));
     }
 
-    paragraph.getChildren().forEach(child -> paragraphs.addAll(collectWithChildren(child)));
+    paragraph.getChildren().forEach(child -> paragraphs.addAll(collectWithChildren(child, matchingSeniorities)));
     return paragraphs;
   }
 }
