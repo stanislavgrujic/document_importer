@@ -26,6 +26,7 @@ public class MarkdownFileReader {
     resources.add(new ClassPathResource("markdown/Architectural_styles.md"));
     resources.add(new ClassPathResource("markdown/Data_distribution_and_database_clustering.md"));
     resources.add(new ClassPathResource("markdown/Data_storage.md"));
+    resources.add(new ClassPathResource("markdown/Key_system_characteristics.md"));
 
     Paragraph systemDesign = new Paragraph();
     systemDesign.setTitle("System Design");
