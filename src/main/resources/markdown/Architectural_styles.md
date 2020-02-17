@@ -27,7 +27,7 @@ Processing styles:
 *   Batch processing system / offline systems
 *   Stream processing system / near-real-time systems
 
-###### {"semantic":"comparison", "source-link":"[https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh](https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh", "source-author":"Martin Kleppmann", "source-details":"Read entire section >transaction processing or analytics<"}
+###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh", "source-author":"Martin Kleppmann", "source-details":"Read entire section >transaction processing or analytics<"}
 
 ![alt_text](../static/images/Architectural-styles0.png "image_tooltip")
 
