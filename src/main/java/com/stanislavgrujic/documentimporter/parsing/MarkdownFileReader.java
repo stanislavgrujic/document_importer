@@ -25,6 +25,7 @@ public class MarkdownFileReader {
     List<ClassPathResource> resources = new ArrayList<>();
     resources.add(new ClassPathResource("markdown/Architectural_styles.md"));
     resources.add(new ClassPathResource("markdown/Data_distribution_and_database_clustering.md"));
+    resources.add(new ClassPathResource("markdown/Data_storage.md"));
 
     Paragraph systemDesign = new Paragraph();
     systemDesign.setTitle("System Design");

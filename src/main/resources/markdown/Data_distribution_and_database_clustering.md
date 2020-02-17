@@ -1,4 +1,4 @@
-# Data distribution & database clustering {#data-distribution-&-database-clustering}
+# Data distribution & database clustering
 
 ###### {"semantic":"why", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author": "Martin Kleppmann"}
 
