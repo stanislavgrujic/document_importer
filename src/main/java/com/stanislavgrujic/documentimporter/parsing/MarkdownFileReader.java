@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class MarkdownFileReader {
@@ -20,33 +22,38 @@ public class MarkdownFileReader {
   @SneakyThrows
   @PostConstruct
   public void read() {
-    ClassPathResource classPathResource = new ClassPathResource("markdown/Architectural_styles.md");
+    List<ClassPathResource> resources = new ArrayList<>();
+    resources.add(new ClassPathResource("markdown/Architectural_styles.md"));
+    resources.add(new ClassPathResource("markdown/Data_distribution_and_database_clustering.md"));
 
     Paragraph systemDesign = new Paragraph();
     systemDesign.setTitle("System Design");
 
-    try (InputStreamReader fileReader = new InputStreamReader(classPathResource.getInputStream());
-        BufferedReader reader = new BufferedReader(fileReader)) {
-      String line = reader.readLine();
+    for (ClassPathResource resource : resources) {
+      try (InputStreamReader fileReader = new InputStreamReader(resource.getInputStream());
+          BufferedReader reader = new BufferedReader(fileReader)) {
+        String line = reader.readLine();
 
-      MarkdownParser mdParser = MarkdownParser.INIT;
+        MarkdownParser mdParser = MarkdownParser.INIT;
 
-      while (line != null) {
+        while (line != null) {
 
-        Event event = createEvent(line);
-        mdParser = (MarkdownParser) mdParser.handle(event);
+          Event event = createEvent(line);
+          mdParser = (MarkdownParser) mdParser.handle(event);
 
-        line = reader.readLine();
-      }
+          line = reader.readLine();
+        }
 
-      mdParser.saveParagraph();
-      Paragraph topParagraph = mdParser.getTopParent();
+        mdParser.saveParagraph();
+        Paragraph topParagraph = mdParser.getTopParent();
 
-      systemDesign.addChildren(topParagraph.getChildren());
-      for (Paragraph child : topParagraph.getChildren()) {
-        child.setParent(systemDesign);
+        systemDesign.addChildren(topParagraph.getChildren());
+        for (Paragraph child : topParagraph.getChildren()) {
+          child.setParent(systemDesign);
+        }
       }
     }
+
     repository.save(systemDesign);
 
   }
