@@ -214,3 +214,8 @@ Microservices
 *   Service mash: traffic control, service discovery, load balancing, resilience, observability, security, chaos injection
 *   Serverless goes a step further than the PaaS model in that it fully abstracts server infrastructure from the application developers.
 
+## Diagrams visualizations
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=x2-rSnhpw0g", "time-period":"00:06:05 - 00:35:25", "source-author":"Simon Brown"}
+
+C4 model
