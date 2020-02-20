@@ -743,8 +743,39 @@ Scenario of failures between services
 Bounded Context Example
 
 
-### Modular monolith 
+### Modular monolith
 
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:02:46 - 00:08:12", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Model-Code gap
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:12:24 - 00:12:25", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Source code structuring style: Package by layer
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:12:28 - 00:21:43", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Source code structuring style: Package by feature
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:22:14 - 00:24:10", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Well structured code tooling approach: Fitness function
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:25:26 - 00:29:13", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Source code structuring style: Package by component
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:29:35 - 00:35:50", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Code organization vs encapsulation, structuring tyles comparison
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:40:30 - 00:42:40", "source-author":"Simon Brown", "mastery":"advanced"}
+
+Monolith - Modular Monolith - Microservices spectrum
+
+###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=5OjqD-ow8GE", "time-period":"00:44:48 - 00:45:21", "source-author":"Simon Brown", "mastery":"advanced"}
+
+In-process and out-of-process characteristics
 
 ## IoT 
 
