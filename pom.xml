@@ -78,12 +78,6 @@
 		</plugins>
 		<resources>
 			<resource><directory>src/main/resources</directory></resource>
-			<resource>
-				<directory>src/main/resources/markdown</directory>
-			</resource>
-			<resource>
-				<directory>src/main/resources/static/images</directory>
-			</resource>
 		</resources>
 	</build>
 
