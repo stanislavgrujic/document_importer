@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class MarkdownFileReader {
     systemDesign.setTitle("System Design");
 
     for (ClassPathResource resource : resources) {
-      try (InputStreamReader fileReader = new InputStreamReader(resource.getInputStream());
+      try (InputStreamReader fileReader = new InputStreamReader(resource.getInputStream(), StandardCharsets.UTF_8);
           BufferedReader reader = new BufferedReader(fileReader)) {
         String line = reader.readLine();
 
