@@ -162,7 +162,7 @@ AWS managed service price per month: 600$
 ###### {"semantic":"explanation", "source-link":"https://www.infoq.com/articles/cloud-native-architecture-adoption-part1/"}
 
 
-![alt_text](../static/images/Why-Architecture0.png "image_tooltip")
+![alt_text](/images/Why-Architecture0.png "image_tooltip")
 
 
 Mainframe

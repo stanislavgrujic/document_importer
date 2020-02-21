@@ -29,7 +29,7 @@ Processing styles:
 
 ###### {"semantic":"comparison", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch03.html#sec_storage_dwh", "source-author":"Martin Kleppmann", "source-details":"Read entire section >transaction processing or analytics<"}
 
-![alt_text](../static/images/Architectural-styles0.png "image_tooltip")
+![alt_text](/images/Architectural-styles0.png "image_tooltip")
 
 
 
@@ -47,7 +47,7 @@ A service waits for a request or instruction from a client to arrive. When one i
 Web server popularity
 
 
-![alt_text](../static/images/Architectural-styles1.png "image_tooltip")
+![alt_text](/images/Architectural-styles1.png "image_tooltip")
 
 
 ###### {"semantic":"tool"}
@@ -55,14 +55,14 @@ Web server popularity
 Java app server popularity
 
 
-![alt_text](../static/images/Architectural-styles2.png "image_tooltip")
+![alt_text](/images/Architectural-styles2.png "image_tooltip")
 
 
 ###### {"semantic":"explanation"}
 
 **Is it a good idea to have a web/app server and data storage server on the same machine/OS?**
 
-Yes while app is small or medium size - requests per second up to 100 req/s  and data storage up to 5GB.
+Yes while app is small or medium size - requests per second up to 100 req/s and data storage up to 5GB.
 
 Positive side of having them together is easier administration and fast inter-communication.
 
@@ -539,10 +539,10 @@ A 2017 Akamai study shows that every 100-millisecond delay in website load time 
 
 ###### {"semantic":"metrics"}
 
-![alt_text](http:///images/Architectural-styles3.png "image_tooltip")
+![alt_text](/images/Architectural-styles3.png "image_tooltip")
 
 
-![alt_text](../static/images/Architectural-styles4.png "image_tooltip")
+![alt_text](/images/Architectural-styles4.png "image_tooltip")
 
 
 ###### {"semantic":"metrics"}

@@ -400,7 +400,7 @@ API management solves the problem of “we have these existing, curated, APIs th
 API gateway is a server that acts as an API front-end. It is the API for clients and applications and is responsible for communicating with any backend APIs and other application network endpoints (those that don’t meet the aforementioned definition of API)
 
 
-![alt_text](../static/images/Data-distribution0.png "image_tooltip")
+![alt_text](/images/Data-distribution0.png "image_tooltip")
 
 
 Examples of API Management software that leverages an API gateway:
@@ -415,7 +415,7 @@ Examples of API Management software that leverages an API gateway:
 **“Infrastructure / Cluster Ingress” perspective of API**
 
 
-![alt_text](../static/images/Data-distribution1.png "image_tooltip")
+![alt_text](/images/Data-distribution1.png "image_tooltip")
 
 
 Examples of these types of ingress implementations include:
@@ -442,7 +442,7 @@ service mesh gives more details/fidelity to the services/clients about the imple
 
 
 
-![alt_text](../static/images/Data-distribution2.png "image_tooltip")
+![alt_text](/images/Data-distribution2.png "image_tooltip")
 
 
 
@@ -451,38 +451,38 @@ service mesh gives more details/fidelity to the services/clients about the imple
 
 
 
-![alt_text](../static/images/Data-distribution3.png "image_tooltip")
+![alt_text](/images/Data-distribution3.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution4.png "image_tooltip")
+![alt_text](/images/Data-distribution4.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution5.png "image_tooltip")
+![alt_text](/images/Data-distribution5.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution6.png "image_tooltip")
+![alt_text](/images/Data-distribution6.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution7.png "image_tooltip")
+![alt_text](/images/Data-distribution7.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution8.png "image_tooltip")
+![alt_text](/images/Data-distribution8.png "image_tooltip")
 
 
 
-![alt_text](../static/images/Data-distribution9.png "image_tooltip")
+![alt_text](/images/Data-distribution9.png "image_tooltip")
 
 
 ###### {"semantic":"explanation", "source-link":"https://blog.christianposta.com/microservices/application-network-functions-with-esbs-api-management-and-now-service-mesh/", "source-author": "Christian Posta"}
 
 
 
-![alt_text](../static/images/Data-distribution10.png "image_tooltip")
+![alt_text](/images/Data-distribution10.png "image_tooltip")
 
 
 ###### {"semantic":"explanation"}
@@ -576,7 +576,7 @@ HTTP/1.1
 
 
 
-![alt_text](../static/images/Data-distribution11.png "image_tooltip")
+![alt_text](/images/Data-distribution11.png "image_tooltip")
 
 
 ###### {"semantic":"explanation", "source-link":"https://www.youtube.com/watch?v=rXi5CLjIQ9k", "time-period": "00:48:38 - 00:48:14", "source-author": "Clemens Vasters", "mastery":"medium"}
@@ -587,7 +587,7 @@ HTTP/2
 
 
 
-![alt_text](../static/images/Data-distribution12.png "image_tooltip")
+![alt_text](/images/Data-distribution12.png "image_tooltip")
 
 
 
@@ -601,7 +601,7 @@ Web Sockets
 
 
 
-![alt_text](../static/images/Data-distribution13.png "image_tooltip")
+![alt_text](/images/Data-distribution13.png "image_tooltip")
 
 
 
@@ -615,7 +615,7 @@ CoAP
 
 
 
-![alt_text](../static/images/Data-distribution14.png "image_tooltip")
+![alt_text](/images/Data-distribution14.png "image_tooltip")
 
 
 
@@ -629,7 +629,7 @@ MQTT
 
 
 
-![alt_text](../static/images/Data-distribution15.png "image_tooltip")
+![alt_text](/images/Data-distribution15.png "image_tooltip")
 
 
 
@@ -643,7 +643,7 @@ AMQP
 
 
 
-![alt_text](../static/images/Data-distribution16.png "image_tooltip")
+![alt_text](/images/Data-distribution16.png "image_tooltip")
 
 
 

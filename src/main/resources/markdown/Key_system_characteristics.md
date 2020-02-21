@@ -205,7 +205,7 @@ The internet and most internal networks in data centers (often Ethernet) are asy
 *   The remote node may have processed your request, but the response has been delayed and will be delivered later (perhaps the network or your own machine is overloaded).
 
 
-![alt_text](../static/images/Key_system_characteristics0.png "image_tooltip")
+![alt_text](/images/Key_system_characteristics0.png "image_tooltip")
 
 
 The sender can’t even tell whether the packet was delivered: the only option is for the recipient to send a response message, which may in turn be lost or delayed. These issues are indistinguishable in an asynchronous network: the only information you have is that you haven’t received a response yet. If you send a request to another node and don’t receive a response, it is impossible to tell why. The usual way of handling this issue is a timeout: after some time you give up waiting and assume that the response is not going to arrive. However, when a timeout occurs, you still don’t know whether the remote node got your request or not.
@@ -231,10 +231,10 @@ There are three principles of [systems design](https://en.wikipedia.org/wiki/Sys
 Percentage of availability = (total elapsed time – sum of downtime)/total elapsed time
 
 
-![alt_text](../static/images/Key_system_characteristics1.png "image_tooltip")
+![alt_text](/images/Key_system_characteristics1.png "image_tooltip")
 
 
-![alt_text](../static/images/Key_system_characteristics2.png "image_tooltip")
+![alt_text](/images/Key_system_characteristics2.png "image_tooltip")
 
 
 Usually calculated monthly because there is a high chance that once a problem exists, the SLA will get breached and a significant amount of time can be lost. With a monthly SLA, the credit or refund that the provider needs to return is proportional to the cost of that month instead of the cost of that year.
@@ -350,7 +350,7 @@ Common industry terms:
 **Recovery point objective (RPO)** — The acceptable amount of data loss measured in time. For example, if a disaster occurs at 12:00 PM (noon) and the RPO is one hour, the system should recover all data that was in the system before 11:00 AM. Data loss will span only one hour, between 11:00 AM and 12:00 PM (noon).
 
 
-![alt_text](../static/images/Key_system_characteristics3.png "image_tooltip")
+![alt_text](/images/Key_system_characteristics3.png "image_tooltip")
 
 
 **Backup and Restore** - data is backed up to tape and sent off-site regularly; relatively slow process

@@ -3,7 +3,7 @@
 ###### {"semantic":"composed-of", "source-link":"https://github.com/donnemartin/system-design-primer#design-a-system-that-scales-to-millions-of-users-on-aws", "source-author":"Donne Martin"}
 
 
-![alt_text](../static/images/Typical-Enterprise0.png "image_tooltip")
+![alt_text](/images/Typical-Enterprise0.png "image_tooltip")
 
 
 Every scalable enterprise architecture shares a good portion of common types of elements and patterns that are shown in the diagram. Understanding them is important to be able to make good architectural decisions in case of building a new scalable system.
