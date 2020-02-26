@@ -649,6 +649,15 @@ AMQP
 
 ## Messaging systems
 
+###### {"semantic":"explanation", "source-author": "Tim Bray"}
+
+![alt_text](/images/message_system_comparison.png "image_tooltip")
+
+
+###### {"semantic":"comparison", "source-link":"https://www.youtube.com/watch?v=K6Ehvt656Ss", "time-period": "00:06:41 - 00:19:22", "source-author": "Dirk Frohner"}
+
+Message channel types: point-to-point (queue) and publish-subscribe (topic) 
+
 ###### {"semantic":"comparison"}
 
 
