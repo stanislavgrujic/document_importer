@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -23,5 +24,10 @@ public class ParagraphService {
       return repository.findAll();
     }
     return repository.findByTitleContaining(title);
+  }
+
+  public List<Paragraph> findKnowledgeBlocksById(long id) {
+    Paragraph paragraph = repository.getOne(id);
+    return Collections.singletonList(paragraph);
   }
 }

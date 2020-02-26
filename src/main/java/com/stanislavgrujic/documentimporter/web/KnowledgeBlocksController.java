@@ -9,6 +9,7 @@ import com.stanislavgrujic.documentimporter.web.dto.ParagraphDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +24,19 @@ public class KnowledgeBlocksController {
 
   @Autowired
   private ParagraphService service;
+
+  @GetMapping("/{id}")
+  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocksById(@PathVariable long id) {
+    List<Level> levels = Level.getLevels("ADVANCED");
+
+    List<Paragraph> paragraphs = service.findKnowledgeBlocksById(id);
+    List<ParagraphDto> paragraphDtos = paragraphs.stream()
+                                                 .map(paragraph -> collectWithChildren(paragraph, levels))
+                                                 .flatMap(List::stream)
+                                                 .collect(Collectors.toList());
+
+    return ResponseEntity.ok(new KnowledgeBlocksResponseDto(paragraphDtos));
+  }
 
   @GetMapping
   public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocks(@RequestParam(required = false) String title,
