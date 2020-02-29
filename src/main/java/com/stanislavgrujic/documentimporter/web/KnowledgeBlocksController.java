@@ -26,16 +26,12 @@ public class KnowledgeBlocksController {
   private ParagraphService service;
 
   @GetMapping("/{id}")
-  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocksById(@PathVariable long id) {
+  public ResponseEntity<ParagraphDto> getKnowledgeBlocksById(@PathVariable long id) {
     List<Level> levels = Level.getLevels("ADVANCED");
 
-    List<Paragraph> paragraphs = service.findKnowledgeBlocksById(id);
-    List<ParagraphDto> paragraphDtos = paragraphs.stream()
-                                                 .map(paragraph -> collectWithChildren(paragraph, levels))
-                                                 .flatMap(List::stream)
-                                                 .collect(Collectors.toList());
+    Paragraph paragraph = service.findKnowledgeBlockById(id);
 
-    return ResponseEntity.ok(new KnowledgeBlocksResponseDto(paragraphDtos));
+    return ResponseEntity.ok().body(ParagraphDto.from(paragraph));
   }
 
   @GetMapping
