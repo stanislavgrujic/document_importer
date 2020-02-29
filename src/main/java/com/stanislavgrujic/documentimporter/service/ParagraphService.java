@@ -26,8 +26,7 @@ public class ParagraphService {
     return repository.findByTitleContaining(title);
   }
 
-  public List<Paragraph> findKnowledgeBlocksById(long id) {
-    Paragraph paragraph = repository.getOne(id);
-    return Collections.singletonList(paragraph);
+  public Paragraph findKnowledgeBlockById(long id) {
+    return repository.getOne(id);
   }
 }
