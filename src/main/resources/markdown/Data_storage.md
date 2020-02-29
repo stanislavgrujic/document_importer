@@ -114,9 +114,9 @@ Else NoSQL.
 
 Data storage popularity
 
-![alt_text](/images/Data-Storage0.png "image_tooltip")
+![alt_text](/images/Data-storage0.png "image_tooltip")
 
-![alt_text](/images/Data-Storage1.png "image_tooltip")
+![alt_text](/images/Data-storage1.png "image_tooltip")
 
 
 
@@ -186,7 +186,7 @@ to differentiate this pattern of using databases from transaction processing, it
 been called online analytical processing (OLAP).
 
 
-![alt_text](/images/Data-Storage2.png "image_tooltip")
+![alt_text](/images/Data-storage2.png "image_tooltip")
 
 
 On the surface, a data warehouse and a relational OLTP database look similar, because they both have a SQL query interface. However, the internals of the systems can look quite different, because they are optimized for very different query patterns.
@@ -268,7 +268,7 @@ With **_proxy caching_**, a proxy is placed between the client and the server. A
 
 By default try to use out-of-box caching in DB and browser. First cache to include is CDN if you have a significant amount of static content.
 
-![alt_text](/images/Data-Storage3.png "image_tooltip")
+![alt_text](/images/Data-storage3.png "image_tooltip")
 
 ## BLOB handling
 
@@ -284,7 +284,7 @@ There are several different ways where BLOB can be stored:
 *   [DAS](https://en.wikipedia.org/wiki/Direct-attached_storage)
 
 
-![alt_text](/images/Data-Storage4.png "image_tooltip")
+![alt_text](/images/Data-storage4.png "image_tooltip")
 
 
 BLOB storage types:
@@ -297,7 +297,7 @@ BLOB storage types:
 *   **Object storage (AWS S3, Azure Blob Storage)**, slowest with 100s requests (PUT, LIST, DELETE) per second, cheapest (0.02$/GB), individual files up to 5TB
 
 
-![alt_text](/images/Data-Storage5.png "image_tooltip")
+![alt_text](/images/Data-storage5.png "image_tooltip")
 
 
  
