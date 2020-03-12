@@ -375,12 +375,12 @@ A sliding window contains all the events that occur within some interval of each
 
 Unlike the other window types, a session window has no fixed duration. Instead, it is defined by grouping together all events for the same user that occur closely together in time, and the window ends when the user has been inactive for some time.
 
-###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":""}
+###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Ellen Friedman; Ted Dunning"}
 Waze: Crowd-sourced navigation.
 Using real-time streaming input from millions of drivers, Waze reports current traffic and road information. These moment-to-moment insights allow drivers to make informed decisions about their route that can reduce gasoline usage, travel time, and aggravation.
 Knowing that there is a slow-down caused by an accident on a particular freeway during the morning commute is useful to a driver while the incident and its effect on traffic are happening. Knowing about this an hour after the event or at the end of the day, in contrast, has much less value, except perhaps as a way to review the history of traffic patterns. But these after-the-fact insights do little to help the morning commuter get to work faster. Waze is just one straightforward example of the time-value of information: the value of that particular knowledge decreases quickly with elapsed time. 
 
-###### {"semantic":"metaphor", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":""}
+###### {"semantic":"metaphor", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":"Ellen Friedman; Ted Dunning"}
 BATCH VERSUS STREAMING: Water metaphor
 
 In the past, in order to handle data analysis at scale, data was collected and analyzed in batch. What’s the difference in a batch versus a streaming process? Consider for a moment this simple analogy: compare data to water that may be collected in a bucket and delivered to the user versus water that flows to the user via a pipe.
