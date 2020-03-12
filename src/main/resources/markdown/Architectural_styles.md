@@ -375,10 +375,23 @@ A sliding window contains all the events that occur within some interval of each
 
 Unlike the other window types, a session window has no fixed duration. Instead, it is defined by grouping together all events for the same user that occur closely together in time, and the window ends when the user has been inactive for some time.
 
+###### {"semantic":"example", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":""}
+Waze: Crowd-sourced navigation.
+Using real-time streaming input from millions of drivers, Waze reports current traffic and road information. These moment-to-moment insights allow drivers to make informed decisions about their route that can reduce gasoline usage, travel time, and aggravation.
+Knowing that there is a slow-down caused by an accident on a particular freeway during the morning commute is useful to a driver while the incident and its effect on traffic are happening. Knowing about this an hour after the event or at the end of the day, in contrast, has much less value, except perhaps as a way to review the history of traffic patterns. But these after-the-fact insights do little to help the morning commuter get to work faster. Waze is just one straightforward example of the time-value of information: the value of that particular knowledge decreases quickly with elapsed time. 
+
+###### {"semantic":"metaphor", "source-link":"https://learning.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/", "source-author":""}
+BATCH VERSUS STREAMING: Water metaphor
+
+In the past, in order to handle data analysis at scale, data was collected and analyzed in batch. What’s the difference in a batch versus a streaming process? Consider for a moment this simple analogy: compare data to water that may be collected in a bucket and delivered to the user versus water that flows to the user via a pipe.
+
+It’s possible to put a valve on the pipe such that the flow of water is periodically interrupted when the tap is closed. But with the pipe and valve, it is the choice of the user whether to hold back the water or to let it flow—it can handle both styles of delivery. In contrast, even if you carry buckets very quickly to the recipient, the water delivered by bucket (batch) will never occur as a continuous stream.
+
+In computing, batch processing is a good way to deal with huge amounts of distributed data, and batch-based computational approaches such as MapReduce or Spark are still useful in many situations. If you require an hourly summation of a series of events and an end-of-day or weekly final sum, batch processes may serve your needs well. But for many use cases, batch does not sufficiently reflect the way life happens. 
 
 #### Event driven architecture 
 
-###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
+###### {"semantic":"why", "source-link":"https://learning.oreilly.com/library/view/streaming-architecture/9781491953914/ch01.html#ch01", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
 
 Event driven architecture intro and event/message types
 
