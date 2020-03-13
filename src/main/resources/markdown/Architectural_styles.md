@@ -395,7 +395,7 @@ Concept of global design for streaming architecture: more than one component can
 
 #### Event driven architecture 
 
-###### {"semantic":"why", "source-link":"https://learning.oreilly.com/library/view/streaming-architecture/9781491953914/ch01.html#ch01", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
+###### {"semantic":"why", "source-link":"https://www.youtube.com/watch?v=tdd8w9d_d-c", "time-period":"00:11:18 - 00:19:59", "source-author":"Allard Buijze", "tags":"example, Maslow Syndrome"}
 
 Event driven architecture intro and event/message types
 
