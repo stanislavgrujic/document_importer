@@ -469,6 +469,48 @@ for keeping it consistent with the event log.
 
 ##### Message broker and message queue (Messaging: Request-Reply, Point-to-Point, Publish-Subscribe, Fire-and-forget) 
 
+###### {"semantic":"metaphor", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch01.html#what-is-a-messaging-system-and-why-do-we-need-one", "source-author":"Jakub Korab"}
+Point-to-point as post office
+
+Alexandra walks into the post office to send a parcel to Adam. She walks up to the counter and hands the teller the parcel. The teller places the parcel behind the counter and gives Alexandra a receipt. Adam does not need to be at home at the moment that the parcel is sent. Alexandra trusts that the parcel will be delivered to Adam at some point in the future, and is free to carry on with the rest of her day. At some point later, Adam receives the parcel.
+
+This is an example of the point-to-point messaging domain. The post office here acts as a distribution mechanism for parcels, guaranteeing that each parcel will be delivered once. Using the post office separates the act of sending a parcel from the delivery of the parcel.
+
+In classical messaging systems, the point-to-point domain is implemented through queues. A queue acts as a first in, first out (FIFO) buffer to which one or more consumers can subscribe. Each message is delivered to only one of the subscribed consumers. Queues will typically attempt to distribute the messages fairly among the consumers. Only one consumer will receive a given message.
+
+Queues are termed as being durable which means that messaging system will retain messages in the absence of any active subscribers until a consumer next subscribes to the queue to take delivery of them.
+Durability is often confused with persistence, and while the two terms come across as interchangeable, they serve different functions. Persistence determines whether a messaging system writes the message to some form of storage between receiving and dispatching it to a consumer. Messages sent to a queue may or may not be persistent.
+
+###### {"semantic":"use-case", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch01.html#what-is-a-messaging-system-and-why-do-we-need-one", "source-author":"Jakub Korab"}
+Point-to-point messaging is used when the use case calls for a message to be acted upon once only. Examples of this include depositing funds into an account or fulfilling a shipping order.
+
+###### {"semantic":"metaphor", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch01.html#what-is-a-messaging-system-and-why-do-we-need-one", "source-author":"Jakub Korab"}
+Publish-Subscribe as conference call
+
+Gabriella dials in to a conference call. While she is connected, she hears everything that the speaker is saying, along with the rest of the call participants. When she disconnects, she misses out on what is said. On reconnecting, she continues to hear what is being said.
+
+This is an example of the publish-subscribe messaging domain. The conference call acts as a broadcast mechanism. The person speaking does not care how many people are currently dialed into the call—the system guarantees that anyone who is currently dialed in will hear what is being said.
+
+In classical messaging systems, the publish-subscribe messaging domain is implemented through topics.
+
+###### {"semantic":"use-case", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch01.html#what-is-a-messaging-system-and-why-do-we-need-one", "source-author":"Jakub Korab"}
+Topics are typically nondurable. Much like the listener who does not hear what is said on the conference call when she disconnects, topic subscribers miss any messages that are sent while they are offline. For this reason, it can be said that topics provide an at-most-once delivery guarantee for each consumer.
+
+Publish-subscribe messaging is typically used when messages are informational in nature and the loss of a single message is not particularly significant. For example, a topic might transmit temperature readings from a group of sensors once every second. A system that subscribes to the topic that is interested in the current temperature will not be concerned if it misses a message—another will arrive shortly.
+
+###### {"semantic":"use-case", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch01.html#what-is-a-messaging-system-and-why-do-we-need-one", "source-author":"Jakub Korab"}
+Hybrid Models
+
+A store’s website places order messages onto a message “queue.” A fulfilment system is the primary consumer of those messages. In addition, an auditing system needs to have copies of these order messages for tracking later on. Both systems cannot miss messages, even if the systems themselves are unavailable for some time. The website should not be aware of the other systems.
+
+Use cases often call for a hybrid of publish-subscribe and point-to-point messaging, such as when multiple systems each want a copy of a message and require both durability and persistence to prevent message loss.
+
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch02.html", "source-author":"Jakub Korab"}
+The Performance-Reliability Trade-off
+Any system that accepts data, be it a message broker or a database, needs to be instructed about how that data should be handled if the system fails. Failure can take many forms, but for the sake of simplicity, we will narrow it down to a situation where the system loses power and immediately shuts down. In a situation such as this, we need to reason about what happened to the data that the system had. If the data (in this case, messages) was in memory or a volatile piece of hardware, such as a cache, then that data will be lost. However, if the data had been sent to nonvolatile storage, such as a disk, then it will once again be accessible when the system is brought back online.
+From that perspective, it makes sense that if we do not want to lose messages if a broker goes down, then we need to write them to persistent storage. The cost of this particular decision is unfortunately quite high.
+Consider that the difference between writing a megabyte of data to disk is between 100 to 1000 times slower than writing it to memory. 
+The higher the reliability, the lower the performance
 
 ##### Enterprise service bus 
 
