@@ -855,6 +855,15 @@ Use Kafka if:
 *   Event Sourcing
 *   Use cases: messaging, app activity tracking, metrics and monitoring, log aggregation, stream processing, event sourcing, commit log
 
+###### {"semantic":"explanation", "source-link":"https://learning.oreilly.com/library/view/understanding-message-brokers/9781492049296/ch03.html", "source-author": "Jakub Korab"}
+LinkedIn’s use cases were predominantly based around ingesting very large volumes of data such as page clicks and access logs in a unidirectional way, while allowing multiple systems to consume that data without affecting the performance of producers or other consumers. 
+ActiveMQ and RabbitMQ are broker-centric, where the broker is responsible for the distribution of messages, and clients only have to worry about sending and receiving messages. 
+Kafka, on the other hand, is client-centric, with the client taking over many of the functions of a traditional broker, such as fair distribution of related messages to consumers, in return for an extremely fast and scalable broker. To people coming from a traditional messaging background, working with Kafka requires a fundamental shift in perspective.
+Kafka unified both publish-subscribe and point-to-point messaging under a single destination type—the topic. This is confusing for people coming from a messaging background where the word topic refers to a broadcast mechanism from which consumption is nondurable, Kafka topics should be considered a hybrid destination type.
+Each topic in Kafka has its own journal.
+Periodically, Kafka removes the oldest parts of the journal, regardless of whether the messages contained within have been read or not. It is a central part of Kafka’s design that the broker is not concerned with whether its messages are consumed—that responsibility belongs to the client.
+A Kafka journal is composed of multiple partitions. Kafka provides strong ordering guarantees in each partition.
+A client that wants to consume messages controls a named pointer, called a consumer group, that points to a message offset in a partition.
 
 ### RabbitMQ
 
