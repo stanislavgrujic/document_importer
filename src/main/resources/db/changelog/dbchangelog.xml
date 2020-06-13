@@ -1,0 +1,51 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="stanislavgrujic (generated)" id="1592035837264-1">
+        <createTable tableName="attributes">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="clarity" type="INT"/>
+            <column name="level" type="INT"/>
+            <column name="part_of" type="VARCHAR(255)"/>
+            <column name="semantics" type="INT"/>
+            <column name="source_author" type="VARCHAR(255)"/>
+            <column name="source_details" type="VARCHAR(255)"/>
+            <column name="source_link" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(255)"/>
+            <column name="time_period" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1592035837264-2">
+        <createTable tableName="hibernate_sequence">
+            <column name="next_val" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1592035837264-3">
+        <createTable tableName="paragraph">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="clarity" type="VARCHAR(255)"/>
+            <column name="inspired_by" type="VARCHAR(255)"/>
+            <column name="level" type="VARCHAR(255)"/>
+            <column name="semantics" type="VARCHAR(255)"/>
+            <column name="source_author" type="VARCHAR(255)"/>
+            <column name="source_details" type="VARCHAR(255)"/>
+            <column name="source_link" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(255)"/>
+            <column name="time_period" type="VARCHAR(255)"/>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="value" type="LONGTEXT"/>
+            <column name="parent_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1592035837264-4">
+        <createIndex indexName="FKe0dccysh8boq4gln1o4l4hkag" tableName="paragraph">
+            <column name="parent_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1592035837264-5">
+        <addForeignKeyConstraint baseColumnNames="parent_id" baseTableName="paragraph" constraintName="FKe0dccysh8boq4gln1o4l4hkag" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="id" referencedTableName="paragraph" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
