@@ -1,5 +1,6 @@
 package com.stanislavgrujic.documentimporter.web;
 
+import com.stanislavgrujic.documentimporter.web.security.AccessForbiddenException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -28,6 +29,11 @@ public class ApplicationExceptionHandler {
       log.error("Could not read public/index.html", e);
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("There was an error completing the action.");
     }
+  }
+
+  @ExceptionHandler(AccessForbiddenException.class)
+  public ResponseEntity<String> handle(AccessForbiddenException e) {
+    return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
   }
 
   @ExceptionHandler(Exception.class)
