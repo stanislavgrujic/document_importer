@@ -81,9 +81,9 @@ public class JwtTokenUtil {
     }
   }
 
-  public void validate(String token) {
+  public String validate(String token) {
     if (StringUtils.isEmpty(token)) {
-      return;
+      return null;
     }
 
     String[] jwsParts = token.split("\\.");
@@ -95,50 +95,17 @@ public class JwtTokenUtil {
       jwsObject.verify(verifier);
 
       JSONObject jsonObject = jwsObject.getPayload().toJSONObject();
-      String email = jsonObject.getAsString("email");
+      JWTClaimsSet claims = JWTClaimsSet.parse(jsonObject);
 
-      log.info("Email is '{}'", email);
+      Date expirationTime = claims.getExpirationTime();
+      if (expirationTime.before(new Date())) {
+        throw new AccessForbiddenException();
+      }
+
+      return claims.getSubject();
     } catch (ParseException | JOSEException e) {
       throw new AccessForbiddenException();
     }
   }
-
-
-//  public boolean isValidToken(String token) {
-//    if (StringUtils.isEmpty(token)) {
-//      return false;
-//    }
-//
-//    User user = getUser(token);
-//
-//    return user != null;
-//  }
-//
-//  public User getUser(String token) {
-//    Claims claims = parseToken(token);
-//
-//    if (!areValidClaims(claims)) {
-//      return null;
-//    }
-//
-//    String userEmail = claims.getSubject();
-//
-//    User authorisedUser = userService.findByEmail(userEmail);
-//
-//    return authorisedUser;
-//  }
-//
-//  private Claims parseToken(String token) {
-//    return Jwts.parser()
-//               .setSigningKey(key)
-//               .parseClaimsJws(token)
-//               .getBody();
-//
-//  }
-//
-//  private boolean areValidClaims(Claims claims) {
-//    return claims.getIssuer().equals(EXECOM_DOMAIN)
-//        && claims.getExpiration().after(new Date());
-//  }
 
 }

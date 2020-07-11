@@ -27,15 +27,13 @@ public class KnowledgeBlocksController {
 
   @GetMapping("/{id}")
   public ResponseEntity<ParagraphDto> getKnowledgeBlocksById(@PathVariable long id) {
-    List<Level> levels = Level.getLevels("ADVANCED");
-
     Paragraph paragraph = service.findKnowledgeBlockById(id);
 
     return ResponseEntity.ok().body(ParagraphDto.from(paragraph));
   }
 
   @GetMapping
-  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocks(@RequestParam(required = false) String title,
+  public ResponseEntity<KnowledgeBlocksResponseDto> getKnowledgeBlocks(@RequestParam String title,
       @RequestParam(required = false) String level) {
     List<Level> levels = Level.getLevels(level);
 
