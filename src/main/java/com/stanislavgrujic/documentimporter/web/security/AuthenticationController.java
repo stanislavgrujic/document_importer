@@ -1,6 +1,6 @@
 package com.stanislavgrujic.documentimporter.web.security;
 
-import com.stanislavgrujic.documentimporter.service.UserDto;
+import com.stanislavgrujic.documentimporter.web.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;

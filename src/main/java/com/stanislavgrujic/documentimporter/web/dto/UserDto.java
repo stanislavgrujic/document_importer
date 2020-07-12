@@ -1,4 +1,4 @@
-package com.stanislavgrujic.documentimporter.service;
+package com.stanislavgrujic.documentimporter.web.dto;
 
 import lombok.Value;
 

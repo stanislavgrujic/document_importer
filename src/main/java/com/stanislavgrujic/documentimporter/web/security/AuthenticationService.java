@@ -1,7 +1,7 @@
 package com.stanislavgrujic.documentimporter.web.security;
 
 import com.stanislavgrujic.documentimporter.model.User;
-import com.stanislavgrujic.documentimporter.service.UserDto;
+import com.stanislavgrujic.documentimporter.web.dto.UserDto;
 import com.stanislavgrujic.documentimporter.service.UserService;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +21,9 @@ public class AuthenticationService {
     User user = userService.findByEmail(userDto.getEmail());
 
     if (user == null) {
-      user = userService.create(userDto);
+      user = userService.create(userDto.getEmail(), userDto.getFullName());
     }
 
-    String jwtToken = jwtTokenUtil.createToken(user);
-    return jwtToken;
+    return jwtTokenUtil.createToken(user);
   }
 }
