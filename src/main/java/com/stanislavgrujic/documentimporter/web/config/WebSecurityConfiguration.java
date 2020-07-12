@@ -22,7 +22,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
   private static final String[] GET_ENDPOINTS = new String[] {"/api/topics", "/api/knowledgeblocks"};
 
-  public static final String[] POST_ENDPOINTS = new String[] {};
+  public static final String[] POST_ENDPOINTS = new String[] {"/api/knowledgeblocks"};
 
   @Autowired
   private JwtTokenUtil jwtTokenUtil;
@@ -36,6 +36,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     http.oauth2Login(Customizer.withDefaults());
     http.oauth2Client();
     http.addFilterBefore(authenticationFilter(), BasicAuthenticationFilter.class);
+    http.csrf().disable();
   }
 
   private Customizer<ExpressionUrlAuthorizationConfigurer<HttpSecurity>.ExpressionInterceptUrlRegistry> authorizeRequests() {
