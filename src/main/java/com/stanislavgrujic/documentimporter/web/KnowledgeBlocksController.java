@@ -8,17 +8,20 @@ import com.stanislavgrujic.documentimporter.service.ParagraphService;
 import com.stanislavgrujic.documentimporter.web.dto.CreateKnowledgeBlockRequest;
 import com.stanislavgrujic.documentimporter.web.dto.KnowledgeBlocksResponseDto;
 import com.stanislavgrujic.documentimporter.web.dto.ParagraphDto;
+import com.stanislavgrujic.documentimporter.web.dto.UpdateKnowledgeBlockRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +72,27 @@ public class KnowledgeBlocksController {
 
     URI uri = uriBuilder.path("/api/knowledgeblocks/{id}").buildAndExpand(paragraphId).toUri();
     return ResponseEntity.created(uri).build();
+  }
+
+  @PutMapping
+  public ResponseEntity<Void> updateKnowledgeBlock(@RequestBody @Valid UpdateKnowledgeBlockRequest request) {
+    Attributes attributes = new Attributes();
+    attributes.setSourceAuthor(request.getSourceAuthor());
+    attributes.setLevel(Level.valueOf(request.getSeniority()));
+    attributes.setSemantics(Semantics.from(request.getCategory()));
+
+    Paragraph parent = new Paragraph();
+    parent.setId(request.getParentId());
+
+    Paragraph paragraph = new Paragraph();
+    paragraph.setId(request.getId());
+    paragraph.setTitle(request.getTitle());
+    paragraph.setValue(request.getText());
+    paragraph.setParent(parent);
+    paragraph.setAttributes(attributes);
+
+    service.update(paragraph);
+    return ResponseEntity.ok().build();
   }
 
   private List<ParagraphDto> collectWithChildren(Paragraph paragraph, List<Level> matchingSeniorities) {

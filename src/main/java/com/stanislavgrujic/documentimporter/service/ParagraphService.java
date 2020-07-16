@@ -37,4 +37,8 @@ public class ParagraphService {
     repository.save(paragraph);
     return paragraph.getId();
   }
+
+  public void update(Paragraph paragraph) {
+    repository.save(paragraph);
+  }
 }

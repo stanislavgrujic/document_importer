@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -36,8 +37,20 @@ public class ApplicationExceptionHandler {
     return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
   }
 
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  public ResponseEntity<String> handle(MethodArgumentNotValidException e) {
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid request");
+  }
+
   @ExceptionHandler(Exception.class)
-  public ResponseEntity<String> renderErrorPage() {
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).contentType(MediaType.TEXT_HTML).body("Sorry");
+  public ResponseEntity<String> renderErrorPage(Exception e) {
+    log(e);
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                         .contentType(MediaType.TEXT_HTML)
+                         .body(e.getMessage());
+  }
+
+  private void log(Exception e) {
+    log.error("There was an error", e);
   }
 }
