@@ -4,6 +4,7 @@ import com.stanislavgrujic.documentimporter.model.Attributes;
 import com.stanislavgrujic.documentimporter.model.Level;
 import com.stanislavgrujic.documentimporter.model.Paragraph;
 import com.stanislavgrujic.documentimporter.model.Semantics;
+import com.stanislavgrujic.documentimporter.model.User;
 import com.stanislavgrujic.documentimporter.service.ParagraphService;
 import com.stanislavgrujic.documentimporter.web.dto.CreateKnowledgeBlockRequest;
 import com.stanislavgrujic.documentimporter.web.dto.KnowledgeBlocksResponseDto;
@@ -11,6 +12,7 @@ import com.stanislavgrujic.documentimporter.web.dto.ParagraphDto;
 import com.stanislavgrujic.documentimporter.web.dto.UpdateKnowledgeBlockRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -92,6 +94,18 @@ public class KnowledgeBlocksController {
     paragraph.setAttributes(attributes);
 
     service.update(paragraph);
+    return ResponseEntity.ok().build();
+  }
+
+  @PutMapping("/{id}/actions/upvote")
+  public ResponseEntity<Void> upVote(@PathVariable long id, @AuthenticationPrincipal User authUser) {
+    service.upVote(id, authUser);
+    return ResponseEntity.ok().build();
+  }
+
+  @PutMapping("/{id}/actions/downvote")
+  public ResponseEntity<Void> downVote(@PathVariable long id,@AuthenticationPrincipal User authUser) {
+    service.downVote(id, authUser);
     return ResponseEntity.ok().build();
   }
 

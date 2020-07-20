@@ -104,7 +104,7 @@
 				<version>${liquibase.version}</version>
 				<configuration>
 					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
-					<driver>com.mysql.jdbc.Driver</driver>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
 				</configuration>
 				<dependencies>
 					<dependency>

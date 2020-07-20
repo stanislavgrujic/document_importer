@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="stanislavgrujic (generated)" id="1595058993793-1">
+        <createTable tableName="vote">
+            <column name="paragraph_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="votePK"/>
+            </column>
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="votePK"/>
+            </column>
+            <column name="vote" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="stanislavgrujic (generated)" id="1595058993793-2">
+        <addForeignKeyConstraint baseColumnNames="paragraph_id" baseTableName="vote" constraintName="FK83mkecya0e7v5x06t8e2s0195" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="paragraph" validate="true"/>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1595058993793-3">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="vote" constraintName="FKcsaksoe2iepaj8birrmithwve" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+
+    <changeSet author="stanislavgrujic (generated)" id="1595058993793-4">
+        <dropTable tableName="attributes"/>
+    </changeSet>
+    <changeSet author="stanislavgrujic (generated)" id="1595058993793-5">
+        <addNotNullConstraint columnDataType="varchar(255)" columnName="email" tableName="user" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
