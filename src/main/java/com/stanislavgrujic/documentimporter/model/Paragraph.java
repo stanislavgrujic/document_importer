@@ -1,6 +1,7 @@
 package com.stanislavgrujic.documentimporter.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.CascadeType;
@@ -19,6 +20,7 @@ import java.util.Set;
 
 @Data
 @ToString(exclude = {"parent", "votes"})
+@EqualsAndHashCode(exclude = {"parent", "votes"})
 @Entity
 public class Paragraph {
 

@@ -1,6 +1,7 @@
 package com.stanislavgrujic.documentimporter.web.dto;
 
 import com.stanislavgrujic.documentimporter.model.Paragraph;
+import com.stanislavgrujic.documentimporter.model.Vote;
 import lombok.Builder;
 import lombok.Value;
 import org.apache.commons.lang3.StringUtils;
@@ -8,26 +9,38 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Value
 @Builder
 public class ParagraphDto {
 
-  private Long id;
+  Long id;
 
-  private String text;
+  String text;
 
-  private List<PathDto> path;
+  List<PathDto> path;
 
-  private AttributesDto attributes;
+  AttributesDto attributes;
+
+  long upVotes;
+
+  long downVotes;
+
+  int userVote;
 
   public static ParagraphDto from(Paragraph paragraph) {
     ParagraphDtoBuilder builder = new ParagraphDtoBuilder();
+    Set<Vote> votes = paragraph.getVotes();
+    long upVotes = votes.stream().filter(vote -> vote.getVote() == 1).count();
+    long downVotes = votes.stream().filter(vote -> vote.getVote() == -1).count();
     return builder
         .id(paragraph.getId())
         .text(createText(paragraph))
         .attributes(AttributesDto.from(paragraph.getAttributes()))
         .path(createPath(paragraph))
+        .upVotes(upVotes)
+        .downVotes(downVotes)
         .build();
   }
 

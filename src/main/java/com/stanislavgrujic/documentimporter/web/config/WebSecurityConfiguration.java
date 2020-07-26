@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @Configuration
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-  private static final String[] GET_ENDPOINTS = new String[] {"/api/topics", "/api/knowledgeblocks"};
+  private static final String[] GET_ENDPOINTS = new String[] {"/api/topics", "/api/knowledgeblocks", "/api/user"};
 
   public static final String[] POST_ENDPOINTS = new String[] {"/api/knowledgeblocks"};
 
