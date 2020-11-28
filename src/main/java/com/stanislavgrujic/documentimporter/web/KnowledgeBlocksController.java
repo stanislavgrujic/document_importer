@@ -58,7 +58,7 @@ public class KnowledgeBlocksController {
   }
 
   @PostMapping
-  public ResponseEntity<URI> createKnowledgeBlock(@RequestBody CreateKnowledgeBlockRequest request,
+  public ResponseEntity<Long> createKnowledgeBlock(@RequestBody CreateKnowledgeBlockRequest request,
       UriComponentsBuilder uriBuilder) {
     Attributes attributes = new Attributes();
     attributes.setSourceAuthor(request.getSourceAuthor());
@@ -70,10 +70,9 @@ public class KnowledgeBlocksController {
     paragraph.setValue(request.getText());
     paragraph.setAttributes(attributes);
 
-    long paragraphId = service.create(paragraph, request.getParentId());
+    Long paragraphId = service.create(paragraph, request.getParentId());
 
-    URI uri = uriBuilder.path("/api/knowledgeblocks/{id}").buildAndExpand(paragraphId).toUri();
-    return ResponseEntity.created(uri).build();
+    return ResponseEntity.ok(paragraphId);
   }
 
   @PutMapping

@@ -38,7 +38,7 @@ public class ParagraphService {
     return repository.getOne(id);
   }
 
-  public long create(Paragraph paragraph, Long parentId) {
+  public Long create(Paragraph paragraph, Long parentId) {
     Paragraph parent = new Paragraph();
     parent.setId(parentId);
     paragraph.setParent(parent);

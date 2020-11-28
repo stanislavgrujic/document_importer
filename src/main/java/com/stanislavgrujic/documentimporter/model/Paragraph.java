@@ -25,7 +25,7 @@ import java.util.Set;
 public class Paragraph {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private Long id;
 
   @Embedded
